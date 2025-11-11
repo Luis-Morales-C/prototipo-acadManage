@@ -49,6 +49,14 @@
                     <span>Alertas</span>
                     <span class="badge">7</span>
                 </a>
+                <a href="#" class="nav-item" data-section="calendar">
+                    <i class="fas fa-calendar"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="#" class="nav-item" data-section="communication">
+                    <i class="fas fa-comments"></i>
+                    <span>Comunicación</span>
+                </a>
             </nav>
 
             <div class="sidebar-footer">
@@ -68,11 +76,11 @@
             <!-- Top Bar -->
             <div class="top-bar">
                 <div>
-                    <h1>Panel de Control Institucional</h1>
+                    <h1 id="page-title">Panel de Control Institucional</h1>
                     <p class="subtitle">Bienvenido, Coordinador López</p>
                 </div>
                 <div class="user-profile">
-                    <button class="notification-btn">
+                    <button class="notification-btn" id="notification-btn">
                         <i class="fas fa-bell"></i>
                         <span class="notification-badge"></span>
                     </button>
@@ -87,220 +95,1348 @@
             </div>
 
             <!-- Content Area -->
-            <div class="content-area">
-                <!-- Stats Grid -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon blue">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div class="stat-label">Total Proyectos Activos</div>
-                        <div class="stat-value">45</div>
-                        <div class="stat-subtitle">+5 este semestre</div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon green">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="stat-label">Proyectos al Día</div>
-                        <div class="stat-value">32</div>
-                        <div class="stat-subtitle">71% del total</div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon orange">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <div class="stat-label">Requieren Atención</div>
-                        <div class="stat-value">13</div>
-                        <div class="stat-subtitle">29% del total</div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon purple">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <div class="stat-label">Docentes Asesores</div>
-                        <div class="stat-value">12</div>
-                        <div class="stat-subtitle">3.8 proyectos/docente</div>
-                    </div>
-                </div>
-
-                <!-- Gráficos de Analítica -->
-                <div class="two-column-grid">
-                    <!-- Gráfico de Avance Global -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title"><i class="fas fa-chart-bar"></i> Avance Global de Proyectos</h2>
-                            <select class="form-select">
-                                <option>Últimos 6 meses</option>
-                                <option>Este semestre</option>
-                                <option>Este año</option>
-                            </select>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-container">
-                                <div class="chart-placeholder">
-                                    <!-- Aquí iría el gráfico real -->
-                                    <p>Gráfico de avance de proyectos por mes</p>
-                                    <div class="chart-bars">
-                                        <div class="chart-bar" style="height: 45%;" data-month="Ago"></div>
-                                        <div class="chart-bar" style="height: 52%;" data-month="Sep"></div>
-                                        <div class="chart-bar" style="height: 58%;" data-month="Oct"></div>
-                                        <div class="chart-bar" style="height: 67%;" data-month="Nov"></div>
-                                    </div>
-                                </div>
+            <div class="content-area" id="content-area">
+                <!-- Sección Dashboard (Overview) -->
+                <div class="section-content" id="overview-section">
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon blue">
+                                <i class="fas fa-project-diagram"></i>
                             </div>
-                            <div class="chart-summary">
-                                <p><strong>Promedio de Avance:</strong> 67%</p>
-                                <p><strong>Tendencia:</strong> <span class="text-success">↑ +8% respecto al mes anterior</span></p>
-                            </div>
+                            <div class="stat-label">Total Proyectos Activos</div>
+                            <div class="stat-value">45</div>
+                            <div class="stat-subtitle">+5 este semestre</div>
                         </div>
-                    </div>
 
-                    <!-- Estado de Proyectos -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Estado de Proyectos</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="progress-stats">
-                                <div class="progress-item">
-                                    <div class="progress-header">
-                                        <span>En Desarrollo</span>
-                                        <span class="progress-value">32</span>
-                                    </div>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 71%;"></div>
-                                    </div>
-                                </div>
-                                <div class="progress-item">
-                                    <div class="progress-header">
-                                        <span>Con Retraso</span>
-                                        <span class="progress-value text-warning">8</span>
-                                    </div>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill warning" style="width: 18%;"></div>
-                                    </div>
-                                </div>
-                                <div class="progress-item">
-                                    <div class="progress-header">
-                                        <span>En Revisión Final</span>
-                                        <span class="progress-value text-info">5</span>
-                                    </div>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill info" style="width: 11%;"></div>
-                                    </div>
-                                </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green">
+                                <i class="fas fa-check-circle"></i>
                             </div>
-                            <div class="alert-banner warning">
+                            <div class="stat-label">Proyectos al Día</div>
+                            <div class="stat-value">32</div>
+                            <div class="stat-subtitle">71% del total</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon orange">
                                 <i class="fas fa-exclamation-triangle"></i>
-                                <div>
-                                    <strong>⚠️ Atención Requerida</strong>
-                                    <p>8 proyectos necesitan seguimiento urgente</p>
-                                </div>
                             </div>
+                            <div class="stat-label">Requieren Atención</div>
+                            <div class="stat-value">13</div>
+                            <div class="stat-subtitle">29% del total</div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Proyectos que Requieren Atención -->
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title"><i class="fas fa-exclamation-circle"></i> Proyectos que Requieren Atención</h2>
-                        <div class="button-group">
-                            <button class="btn btn-outline">
-                                <i class="fas fa-print"></i>
-                                Imprimir Reporte
-                            </button>
-                            <button class="btn btn-blue">
-                                <i class="fas fa-download"></i>
-                                Exportar Datos
-                            </button>
+                        <div class="stat-card">
+                            <div class="stat-icon purple">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <div class="stat-label">Docentes Asesores</div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-subtitle">3.8 proyectos/docente</div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="project-card warning">
-                            <div class="project-header">
-                                <div>
-                                    <h4>Aplicación Móvil para Gestión de Inventarios</h4>
-                                    <p>Estudiante: Ana Martínez | Asesor: Dra. María González</p>
-                                    <div class="project-dates">
-                                        <span><i class="fas fa-calendar"></i> Inicio: 20 Ago 2024</span>
-                                        <span class="text-warning"><i class="fas fa-exclamation-triangle"></i> 15 días de retraso</span>
+
+                    <!-- Gráficos de Analítica -->
+                    <div class="two-column-grid">
+                        <!-- Gráfico de Avance Global -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title"><i class="fas fa-chart-bar"></i> Avance Global de Proyectos</h3>
+                                <select class="form-select">
+                                    <option>Últimos 6 meses</option>
+                                    <option>Este semestre</option>
+                                    <option>Este año</option>
+                                </select>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-container">
+                                    <div class="chart-placeholder">
+                                        <div class="chart-bars">
+                                            <div class="chart-bar" style="height: 45%;" data-month="Ago"></div>
+                                            <div class="chart-bar" style="height: 52%;" data-month="Sep"></div>
+                                            <div class="chart-bar" style="height: 58%;" data-month="Oct"></div>
+                                            <div class="chart-bar" style="height: 67%;" data-month="Nov"></div>
+                                        </div>
                                     </div>
                                 </div>
-                                <span class="status-badge warning">Alto Riesgo</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-header">
-                                    <span class="progress-label">Avance</span>
-                                    <span class="progress-value text-warning">42%</span>
+                                <div class="chart-summary">
+                                    <p><strong>Promedio de Avance:</strong> 67%</p>
+                                    <p><strong>Tendencia:</strong> <span class="text-success">↑ +8% respecto al mes anterior</span></p>
                                 </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill warning" style="width: 42%;"></div>
-                                </div>
-                            </div>
-                            <div class="button-group">
-                                <button class="btn btn-blue">
-                                    <i class="fas fa-info-circle"></i>
-                                    Ver Detalles
-                                </button>
-                                <button class="btn btn-outline">
-                                    <i class="fas fa-envelope"></i>
-                                    Contactar Asesor
-                                </button>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Alertas Predictivas IA -->
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title"><i class="fas fa-robot"></i> Alertas Predictivas IA</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="two-column-grid">
-                            <!-- Alertas de Riesgo -->
-                            <div>
-                                <h3 class="section-subtitle">Alertas de Alto Riesgo</h3>
-                                <div class="alert-item danger">
-                                    <i class="fas fa-skull-crossbones"></i>
-                                    <div>
-                                        <strong>Riesgo de Abandono</strong>
-                                        <p>Ana Martínez muestra patrón de inactividad prolongada. Probabilidad de abandono: 78%.</p>
+                        <!-- Estado de Proyectos -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Estado de Proyectos</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="progress-stats">
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span>En Desarrollo</span>
+                                            <span class="progress-value">32</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 71%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span>Con Retraso</span>
+                                            <span class="progress-value text-warning">8</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill warning" style="width: 18%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div class="progress-header">
+                                            <span>En Revisión Final</span>
+                                            <span class="progress-value text-info">5</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill info" style="width: 11%;"></div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="alert-item warning">
+                                <div class="alert-banner warning">
                                     <i class="fas fa-exclamation-triangle"></i>
                                     <div>
-                                        <strong>Retraso Crítico</strong>
-                                        <p>Luis García tiene 3 entregas pendientes consecutivas. Requiere intervención inmediata.</p>
+                                        <strong>⚠️ Atención Requerida</strong>
+                                        <p>8 proyectos necesitan seguimiento urgente</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyectos que Requieren Atención -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fas fa-exclamation-circle"></i> Proyectos que Requieren Atención</h3>
+                            <div class="button-group">
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-print"></i>
+                                    Imprimir Reporte
+                                </button>
+                                <button class="btn btn-blue">
+                                    <i class="fas fa-download"></i>
+                                    Exportar Datos
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="project-card warning">
+                                <div class="project-header">
+                                    <div>
+                                        <h4>Aplicación Móvil para Gestión de Inventarios</h4>
+                                        <p>Estudiante: Ana Martínez | Asesor: Dra. María González</p>
+                                        <div class="project-dates">
+                                            <span><i class="fas fa-calendar"></i> Inicio: 20 Ago 2024</span>
+                                            <span class="text-warning"><i class="fas fa-exclamation-triangle"></i> 15 días de retraso</span>
+                                        </div>
+                                    </div>
+                                    <span class="status-badge warning">Alto Riesgo</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-header">
+                                        <span class="progress-label">Avance</span>
+                                        <span class="progress-value text-warning">42%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill warning" style="width: 42%;"></div>
+                                    </div>
+                                </div>
+                                <div class="button-group">
+                                    <button class="btn btn-blue">
+                                        <i class="fas fa-info-circle"></i>
+                                        Ver Detalles
+                                    </button>
+                                    <button class="btn btn-outline">
+                                        <i class="fas fa-envelope"></i>
+                                        Contactar Asesor
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card warning">
+                                <div class="project-header">
+                                    <div>
+                                        <h4>Sistema de Gestión de Calidad</h4>
+                                        <p>Estudiante: Luis García | Asesor: Dr. Roberto Silva</p>
+                                        <div class="project-dates">
+                                            <span><i class="fas fa-calendar"></i> Inicio: 15 Sep 2024</span>
+                                            <span class="text-warning"><i class="fas fa-exclamation-triangle"></i> 8 días de retraso</span>
+                                        </div>
+                                    </div>
+                                    <span class="status-badge warning">Riesgo Moderado</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-header">
+                                        <span class="progress-label">Avance</span>
+                                        <span class="progress-value text-warning">58%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill warning" style="width: 58%;"></div>
+                                    </div>
+                                </div>
+                                <div class="button-group">
+                                    <button class="btn btn-blue">
+                                        <i class="fas fa-info-circle"></i>
+                                        Ver Detalles
+                                    </button>
+                                    <button class="btn btn-outline">
+                                        <i class="fas fa-envelope"></i>
+                                        Contactar Asesor
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alertas Predictivas IA -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fas fa-robot"></i> Alertas Predictivas IA</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="two-column-grid">
+                                <!-- Alertas de Riesgo -->
+                                <div>
+                                    <h4 class="section-subtitle">Alertas de Alto Riesgo</h4>
+                                    <div class="alert-item danger">
+                                        <i class="fas fa-skull-crossbones"></i>
+                                        <div>
+                                            <strong>Riesgo de Abandono</strong>
+                                            <p>Ana Martínez muestra patrón de inactividad prolongada. Probabilidad de abandono: 78%.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="alert-item warning">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <div>
+                                            <strong>Retraso Crítico</strong>
+                                            <p>Luis García tiene 3 entregas pendientes consecutivas. Requiere intervención inmediata.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Recomendaciones -->
+                                <div>
+                                    <h4 class="section-subtitle">Recomendaciones</h4>
+                                    <div class="alert-item info">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <div>
+                                            <strong>Reasignación Sugerida</strong>
+                                            <p>Dr. Roberto Silva tiene 6 proyectos asignados. Considera redistribuir carga.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="alert-item success">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Buen Desempeño</strong>
+                                            <p>Dra. María González mantiene excelente tasa de aprobación (92%).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Todos los Proyectos -->
+                <div class="section-content" id="projects-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Gestión de Proyectos</h2>
+                            <p>Administra y supervisa todos los proyectos de investigación</p>
+                        </div>
+
+                        <!-- Filtros -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="filter-bar">
+                                    <div class="filter-group">
+                                        <label for="status-filter">Filtrar por estado:</label>
+                                        <select id="status-filter" class="form-select">
+                                            <option value="all">Todos los proyectos</option>
+                                            <option value="active">En desarrollo</option>
+                                            <option value="delayed">Con retraso</option>
+                                            <option value="final-review">En revisión final</option>
+                                            <option value="completed">Completados</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <label for="program-filter">Programa académico:</label>
+                                        <select id="program-filter" class="form-select">
+                                            <option value="all">Todos los programas</option>
+                                            <option value="systems">Ingeniería de Sistemas</option>
+                                            <option value="industrial">Ingeniería Industrial</option>
+                                            <option value="software">Ingeniería de Software</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <button class="btn btn-blue">
+                                            <i class="fas fa-plus"></i>
+                                            Nuevo Proyecto
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lista de Proyectos -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Proyectos Activos</h3>
+                                <span class="badge">45 proyectos</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="projects-list">
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <div>
+                                                <h4>Sistema de Gestión Académica para IES</h4>
+                                                <p>Estudiante: Juan Pérez | Asesor: Dra. María González</p>
+                                                <div class="project-dates">
+                                                    <span><i class="fas fa-calendar"></i> Inicio: 15 Ago 2024</span>
+                                                    <span><i class="fas fa-flag-checkered"></i> Entrega: 30 May 2025</span>
+                                                </div>
+                                            </div>
+                                            <span class="status-badge success">En Progreso</span>
+                                        </div>
+                                        <div class="progress-bar-container">
+                                            <div class="progress-header">
+                                                <span class="progress-label">Avance</span>
+                                                <span class="progress-value">65%</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 65%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Detalles
+                                            </button>
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-comment"></i>
+                                                Dar Seguimiento
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="project-card warning">
+                                        <div class="project-header">
+                                            <div>
+                                                <h4>Aplicación Móvil para Gestión de Inventarios</h4>
+                                                <p>Estudiante: Ana Martínez | Asesor: Dra. María González</p>
+                                                <div class="project-dates">
+                                                    <span><i class="fas fa-calendar"></i> Inicio: 20 Ago 2024</span>
+                                                    <span class="text-warning"><i class="fas fa-exclamation-triangle"></i> 15 días de retraso</span>
+                                                </div>
+                                            </div>
+                                            <span class="status-badge warning">Alto Riesgo</span>
+                                        </div>
+                                        <div class="progress-bar-container">
+                                            <div class="progress-header">
+                                                <span class="progress-label">Avance</span>
+                                                <span class="progress-value text-warning">42%</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill warning" style="width: 42%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Detalles
+                                            </button>
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-comment"></i>
+                                                Dar Seguimiento
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Docentes -->
+                <div class="section-content" id="teachers-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Gestión de Docentes</h2>
+                            <p>Administra y supervisa a los docentes asesores</p>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon blue">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <div class="stat-label">Total Docentes</div>
+                                <div class="stat-value">12</div>
+                                <div class="stat-subtitle">Activos este semestre</div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon green">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-label">Disponibles</div>
+                                <div class="stat-value">8</div>
+                                <div class="stat-subtitle">Pueden aceptar más proyectos</div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon orange">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="stat-label">Sobrecargados</div>
+                                <div class="stat-value">4</div>
+                                <div class="stat-subtitle">Máxima capacidad alcanzada</div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon purple">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-label">Promedio Proyectos</div>
+                                <div class="stat-value">3.8</div>
+                                <div class="stat-subtitle">Proyectos por docente</div>
+                            </div>
+                        </div>
+
+                        <!-- Lista de Docentes -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Docentes Asesores</h3>
+                                <button class="btn btn-blue">
+                                    <i class="fas fa-plus"></i>
+                                    Agregar Docente
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="teachers-list">
+                                    <div class="teacher-card">
+                                        <div class="teacher-info">
+                                            <div class="teacher-avatar">
+                                                <div class="avatar large">MG</div>
+                                            </div>
+                                            <div class="teacher-details">
+                                                <h4>Dra. María González</h4>
+                                                <p>Profesora Titular - Ingeniería de Sistemas</p>
+                                                <div class="teacher-stats">
+                                                    <span><strong>Proyectos:</strong> 5 activos</span>
+                                                    <span><strong>Tasa Aprobación:</strong> 92%</span>
+                                                    <span><strong>Experiencia:</strong> 8 años</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="teacher-actions">
+                                            <span class="status-badge success">Disponible</span>
+                                            <div class="button-group">
+                                                <button class="btn btn-blue">
+                                                    <i class="fas fa-eye"></i>
+                                                    Ver Perfil
+                                                </button>
+                                                <button class="btn btn-outline">
+                                                    <i class="fas fa-envelope"></i>
+                                                    Contactar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="teacher-card">
+                                        <div class="teacher-info">
+                                            <div class="teacher-avatar">
+                                                <div class="avatar large">RS</div>
+                                            </div>
+                                            <div class="teacher-details">
+                                                <h4>Dr. Roberto Silva</h4>
+                                                <p>Profesor Asociado - Ingeniería de Software</p>
+                                                <div class="teacher-stats">
+                                                    <span><strong>Proyectos:</strong> 6 activos</span>
+                                                    <span><strong>Tasa Aprobación:</strong> 85%</span>
+                                                    <span><strong>Experiencia:</strong> 6 años</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="teacher-actions">
+                                            <span class="status-badge warning">Sobrecargado</span>
+                                            <div class="button-group">
+                                                <button class="btn btn-blue">
+                                                    <i class="fas fa-eye"></i>
+                                                    Ver Perfil
+                                                </button>
+                                                <button class="btn btn-outline">
+                                                    <i class="fas fa-envelope"></i>
+                                                    Contactar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Estudiantes -->
+                <div class="section-content" id="students-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Gestión de Estudiantes</h2>
+                            <p>Administra y supervisa a los estudiantes investigadores</p>
+                        </div>
+
+                        <!-- Stats Grid -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon blue">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <div class="stat-label">Total Estudiantes</div>
+                                <div class="stat-value">45</div>
+                                <div class="stat-subtitle">Activos este semestre</div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon green">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-label">Al Día</div>
+                                <div class="stat-value">32</div>
+                                <div class="stat-subtitle">Sin retrasos en entregas</div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon orange">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="stat-label">Con Retraso</div>
+                                <div class="stat-value">13</div>
+                                <div class="stat-subtitle">Requieren seguimiento</div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon purple">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-label">Promedio Avance</div>
+                                <div class="stat-value">67%</div>
+                                <div class="stat-subtitle">Avance general</div>
+                            </div>
+                        </div>
+
+                        <!-- Lista de Estudiantes -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Estudiantes Activos</h3>
+                                <div class="filter-group">
+                                    <input type="text" placeholder="Buscar estudiante..." class="form-input">
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="students-list">
+                                    <div class="student-card">
+                                        <div class="student-info">
+                                            <div class="student-avatar">
+                                                <div class="avatar">JP</div>
+                                            </div>
+                                            <div class="student-details">
+                                                <h4>Juan Pérez</h4>
+                                                <p>Ingeniería de Sistemas - Semestre 10</p>
+                                                <div class="student-stats">
+                                                    <span><strong>Proyecto:</strong> Sistema de Gestión Académica</span>
+                                                    <span><strong>Asesor:</strong> Dra. María González</span>
+                                                    <span><strong>Avance:</strong> 65%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="student-actions">
+                                            <span class="status-badge success">Al Día</span>
+                                            <div class="button-group">
+                                                <button class="btn btn-blue">
+                                                    <i class="fas fa-eye"></i>
+                                                    Ver Proyecto
+                                                </button>
+                                                <button class="btn btn-outline">
+                                                    <i class="fas fa-envelope"></i>
+                                                    Contactar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="student-card warning">
+                                        <div class="student-info">
+                                            <div class="student-avatar">
+                                                <div class="avatar">AM</div>
+                                            </div>
+                                            <div class="student-details">
+                                                <h4>Ana Martínez</h4>
+                                                <p>Ingeniería de Software - Semestre 9</p>
+                                                <div class="student-stats">
+                                                    <span><strong>Proyecto:</strong> App Móvil Inventarios</span>
+                                                    <span><strong>Asesor:</strong> Dra. María González</span>
+                                                    <span><strong>Avance:</strong> 42%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="student-actions">
+                                            <span class="status-badge warning">15 días de retraso</span>
+                                            <div class="button-group">
+                                                <button class="btn btn-blue">
+                                                    <i class="fas fa-eye"></i>
+                                                    Ver Proyecto
+                                                </button>
+                                                <button class="btn btn-outline">
+                                                    <i class="fas fa-envelope"></i>
+                                                    Contactar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Analítica -->
+                <div class="section-content" id="analytics-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Analítica Institucional</h2>
+                            <p>Métricas y análisis de rendimiento académico</p>
+                        </div>
+
+                        <div class="two-column-grid">
+                            <!-- Tasa de Aprobación por Programa -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Tasa de Aprobación por Programa</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <div class="chart-placeholder">
+                                            <p>Gráfico de tasas de aprobación</p>
+                                        </div>
+                                    </div>
+                                    <div class="chart-summary">
+                                        <p><strong>Promedio General:</strong> 87%</p>
+                                        <p><strong>Mejor Programa:</strong> Ing. de Sistemas (92%)</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Recomendaciones -->
-                            <div>
-                                <h3 class="section-subtitle">Recomendaciones</h3>
-                                <div class="alert-item info">
-                                    <i class="fas fa-lightbulb"></i>
-                                    <div>
-                                        <strong>Reasignación Sugerida</strong>
-                                        <p>Dr. Roberto Silva tiene 6 proyectos asignados. Considera redistribuir carga.</p>
+                            <!-- Distribución de Proyectos -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Distribución de Proyectos</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <div class="chart-placeholder">
+                                            <p>Gráfico de distribución</p>
+                                        </div>
+                                    </div>
+                                    <div class="chart-summary">
+                                        <p><strong>Total Proyectos:</strong> 45</p>
+                                        <p><strong>Programa con más proyectos:</strong> Ing. de Sistemas (18)</p>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="alert-item success">
-                                    <i class="fas fa-check-circle"></i>
+                        <!-- Métricas de Rendimiento -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Métricas de Rendimiento</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="two-column-grid">
                                     <div>
-                                        <strong>Buen Desempeño</strong>
-                                        <p>Dra. María González mantiene excelente tasa de aprobación (92%).</p>
+                                        <h4 class="section-subtitle">Tiempos de Entrega</h4>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Promedio de Finalización</span>
+                                            <span class="metric-value">8.2 meses</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Tiempo Mínimo</span>
+                                            <span class="metric-value">6.5 meses</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Tiempo Máximo</span>
+                                            <span class="metric-value">12.1 meses</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="section-subtitle">Calidad de Proyectos</h4>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Calificación Promedio</span>
+                                            <span class="metric-value">4.2/5.0</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Proyectos Excelentes</span>
+                                            <span class="metric-value">28%</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-label">Proyectos Requieren Mejora</span>
+                                            <span class="metric-value">12%</span>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Reportes -->
+                <div class="section-content" id="reports-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Reportes Institucionales</h2>
+                            <p>Genera y descarga reportes del sistema</p>
+                        </div>
+
+                        <div class="two-column-grid">
+                            <!-- Reportes Predefinidos -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Reportes Predefinidos</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="reports-list">
+                                        <div class="report-item">
+                                            <div class="report-icon">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </div>
+                                            <div class="report-info">
+                                                <h4>Reporte de Progreso Semestral</h4>
+                                                <p>Estado general de todos los proyectos activos</p>
+                                                <small>Última actualización: Hoy, 10:30 AM</small>
+                                            </div>
+                                            <div class="report-actions">
+                                                <button class="btn btn-blue">
+                                                    <i class="fas fa-download"></i>
+                                                    Descargar
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="report-item">
+                                            <div class="report-icon">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </div>
+                                            <div class="report-info">
+                                                <h4>Reporte de Proyectos en Riesgo</h4>
+                                                <p>Proyectos con retrasos o problemas identificados</p>
+                                                <small>Última actualización: Ayer, 3:15 PM</small>
+                                            </div>
+                                            <div class="report-actions">
+                                                <button class="btn btn-blue">
+                                                    <i class="fas fa-download"></i>
+                                                    Descargar
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="report-item">
+                                            <div class="report-icon">
+                                                <i class="fas fa-user-graduate"></i>
+                                            </div>
+                                            <div class="report-info">
+                                                <h4>Reporte de Rendimiento Estudiantil</h4>
+                                                <p>Métricas de avance y desempeño por estudiante</p>
+                                                <small>Última actualización: 20 Nov 2024</small>
+                                            </div>
+                                            <div class="report-actions">
+                                                <button class="btn btn-blue">
+                                                    <i class="fas fa-download"></i>
+                                                    Descargar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Generar Reporte Personalizado -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Generar Reporte Personalizado</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form class="custom-report-form">
+                                        <div class="form-group">
+                                            <label for="report-type">Tipo de Reporte</label>
+                                            <select id="report-type" class="form-select">
+                                                <option value="progress">Progreso de Proyectos</option>
+                                                <option value="performance">Rendimiento Estudiantil</option>
+                                                <option value="advisors">Desempeño de Asesores</option>
+                                                <option value="risks">Análisis de Riesgos</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="date-range">Rango de Fechas</label>
+                                            <select id="date-range" class="form-select">
+                                                <option value="current">Semestre Actual</option>
+                                                <option value="last">Semestre Anterior</option>
+                                                <option value="year">Año Actual</option>
+                                                <option value="custom">Personalizado</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="program-filter">Filtrar por Programa</label>
+                                            <select id="program-filter" class="form-select">
+                                                <option value="all">Todos los Programas</option>
+                                                <option value="systems">Ingeniería de Sistemas</option>
+                                                <option value="industrial">Ingeniería Industrial</option>
+                                                <option value="software">Ingeniería de Software</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="format">Formato de Salida</label>
+                                            <select id="format" class="form-select">
+                                                <option value="pdf">PDF</option>
+                                                <option value="excel">Excel</option>
+                                                <option value="csv">CSV</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn btn-blue">
+                                                <i class="fas fa-cog"></i>
+                                                Generar Reporte
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Alertas -->
+                <div class="section-content" id="alerts-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Gestión de Alertas</h2>
+                            <p>Monitorea y gestiona alertas del sistema</p>
+                        </div>
+
+                        <!-- Filtros de Alertas -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="filter-bar">
+                                    <div class="filter-group">
+                                        <label for="alert-type-filter">Tipo de alerta:</label>
+                                        <select id="alert-type-filter" class="form-select">
+                                            <option value="all">Todas las alertas</option>
+                                            <option value="risk">Riesgo de abandono</option>
+                                            <option value="delay">Retrasos</option>
+                                            <option value="performance">Desempeño</option>
+                                            <option value="system">Sistema</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <label for="alert-priority-filter">Prioridad:</label>
+                                        <select id="alert-priority-filter" class="form-select">
+                                            <option value="all">Todas las prioridades</option>
+                                            <option value="high">Alta</option>
+                                            <option value="medium">Media</option>
+                                            <option value="low">Baja</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <button class="btn btn-outline">
+                                            <i class="fas fa-check-double"></i>
+                                            Marcar Todas como Leídas
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lista de Alertas -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Alertas Activas</h3>
+                                <span class="badge">7</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="alerts-list">
+                                    <div class="alert-item danger unread">
+                                        <i class="fas fa-skull-crossbones"></i>
+                                        <div class="alert-content">
+                                            <h4>Riesgo de Abandono - ALTA PRIORIDAD</h4>
+                                            <p>Ana Martínez (Ing. de Software) muestra patrón de inactividad prolongada. No ha realizado entregas en 45 días.</p>
+                                            <div class="alert-meta">
+                                                <span class="alert-date">Hoy, 09:15 AM</span>
+                                                <span class="alert-source">Sistema Predictivo IA</span>
+                                            </div>
+                                        </div>
+                                        <div class="alert-actions">
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Detalles
+                                            </button>
+                                            <button class="btn btn-outline mark-read-btn">
+                                                <i class="fas fa-check"></i>
+                                                Marcar Leída
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="alert-item warning unread">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <div class="alert-content">
+                                            <h4>Retraso Crítico en Entrega</h4>
+                                            <p>Luis García (Ing. de Sistemas) tiene 3 entregas pendientes consecutivas. Proyecto con 15 días de retraso.</p>
+                                            <div class="alert-meta">
+                                                <span class="alert-date">Ayer, 4:30 PM</span>
+                                                <span class="alert-source">Sistema de Seguimiento</span>
+                                            </div>
+                                        </div>
+                                        <div class="alert-actions">
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Detalles
+                                            </button>
+                                            <button class="btn btn-outline mark-read-btn">
+                                                <i class="fas fa-check"></i>
+                                                Marcar Leída
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="alert-item info">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <div class="alert-content">
+                                            <h4>Recomendación de Reasignación</h4>
+                                            <p>Dr. Roberto Silva tiene 6 proyectos asignados. Considera redistribuir carga entre docentes disponibles.</p>
+                                            <div class="alert-meta">
+                                                <span class="alert-date">20 Nov, 11:20 AM</span>
+                                                <span class="alert-source">Análisis de Carga</span>
+                                            </div>
+                                        </div>
+                                        <div class="alert-actions">
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Detalles
+                                            </button>
+                                            <button class="btn btn-outline mark-read-btn">
+                                                <i class="fas fa-check"></i>
+                                                Marcar Leída
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Historial de Alertas -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Historial de Alertas</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="alerts-history">
+                                    <div class="alert-item success">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div class="alert-content">
+                                            <h4>Problema Resuelto - Entrega Completada</h4>
+                                            <p>Carlos Rodríguez completó la entrega pendiente del Capítulo 3.</p>
+                                            <div class="alert-meta">
+                                                <span class="alert-date">18 Nov, 2:15 PM</span>
+                                                <span class="alert-source">Sistema de Entregas</span>
+                                            </div>
+                                        </div>
+                                        <div class="alert-status">
+                                            <span class="status-badge success">Resuelto</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="alert-item">
+                                        <i class="fas fa-info-circle"></i>
+                                        <div class="alert-content">
+                                            <h4>Recordatorio de Reunión Mensual</h4>
+                                            <p>Reunión de coordinación programada para el 25 de Noviembre.</p>
+                                            <div class="alert-meta">
+                                                <span class="alert-date">15 Nov, 10:00 AM</span>
+                                                <span class="alert-source">Calendario del Sistema</span>
+                                            </div>
+                                        </div>
+                                        <div class="alert-status">
+                                            <span class="status-badge">Completado</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Calendario (Reutilizada del estudiante) -->
+                <div class="section-content" id="calendar-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Calendario Institucional</h2>
+                            <p>Planifica y organiza actividades académicas</p>
+                        </div>
+
+                        <!-- Calendario en Cuadrícula Simple -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Noviembre 2024</h3>
+                            </div>
+                            <div class="card-body">
+                                <!-- Encabezado de días -->
+                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: #3b82f6; color: white; border-radius: 8px 8px 0 0;">
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">LUN</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">MAR</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">MIÉ</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">JUE</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">VIE</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">SÁB</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">DOM</div>
+                                </div>
+                                
+                                <!-- Cuadrícula de días -->
+                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: #e5e7eb;">
+                                    <!-- Semana 1 -->
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">1</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">2</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">3</div>
+                                    
+                                    <!-- Semana 2 -->
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">4</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">5</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">6</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">7</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">8</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">9</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">10</div>
+                                    
+                                    <!-- Semana 3 -->
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">11</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">12</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">13</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">14</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">15</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">16</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">17</div>
+                                    
+                                    <!-- Semana 4 -->
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">18</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">19</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">20</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">21</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">22</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">23</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">24</div>
+                                    
+                                    <!-- Semana 5 -->
+                                    <div style="background: #fffbeb; padding: 15px; text-align: center; font-weight: bold; border: 2px solid #f59e0b;">25</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">26</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">27</div>
+                                    <div style="background: #dbeafe; padding: 15px; text-align: center; font-weight: bold;">28</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">29</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">30</div>
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                </div>
+                                
+                                <!-- Leyenda de eventos -->
+                                <div style="margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div style="width: 12px; height: 12px; background: #fffbeb; border: 2px solid #f59e0b; border-radius: 2px;"></div>
+                                        <span style="font-size: 14px;">Entrega importante</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div style="width: 12px; height: 12px; background: #dbeafe; border-radius: 2px;"></div>
+                                        <span style="font-size: 14px;">Reunión</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Eventos del Mes -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Eventos de Noviembre</h3>
+                            </div>
+                            <div class="card-body">
+                                <div style="display: flex; flex-direction: column; gap: 15px;">
+                                    <div style="display: flex; align-items: start; gap: 15px; padding: 12px; background: #fef3c7; border-radius: 8px;">
+                                        <div style="background: #d97706; color: white; padding: 8px 12px; border-radius: 6px; font-weight: bold; min-width: 50px; text-align: center;">
+                                            25
+                                        </div>
+                                        <div>
+                                            <h4 style="margin: 0 0 5px 0; color: #92400e;">Entrega Capítulo 4 - Desarrollo</h4>
+                                            <p style="margin: 0; color: #92400e; font-size: 14px;">Fecha límite para la entrega del capítulo de desarrollo del sistema</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: start; gap: 15px; padding: 12px; background: #dbeafe; border-radius: 8px;">
+                                        <div style="background: #1d4ed8; color: white; padding: 8px 12px; border-radius: 6px; font-weight: bold; min-width: 50px; text-align: center;">
+                                            28
+                                        </div>
+                                        <div>
+                                            <h4 style="margin: 0 0 5px 0; color: #1e40af;">Reunión de Coordinación</h4>
+                                            <p style="margin: 0; color: #1e40af; font-size: 14px;">Reunión con todos los docentes asesores - 10:00 AM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Comunicación -->
+                <div class="section-content" id="communication-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Comunicación Institucional</h2>
+                            <p>Mantente en contacto con docentes y estudiantes</p>
+                        </div>
+
+                        <div class="two-column-grid">
+                            <!-- Mensajes -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Mensajes</h3>
+                                    <button class="btn btn-blue">
+                                        <i class="fas fa-plus"></i>
+                                        Nuevo Mensaje
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="messages-list">
+                                        <div class="message-item unread">
+                                            <div class="message-avatar">
+                                                <div class="avatar">MG</div>
+                                            </div>
+                                            <div class="message-content">
+                                                <div class="message-header">
+                                                    <h4>Dra. María González</h4>
+                                                    <span class="message-time">Hoy, 10:30 AM</span>
+                                                </div>
+                                                <p class="message-preview">Buenos días, necesito coordinar la reunión de seguimiento para los proyectos de este semestre. ¿Podríamos agendar para la próxima semana?...</p>
+                                            </div>
+                                            <div class="message-status">
+                                                <span class="unread-indicator"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="message-item">
+                                            <div class="message-avatar">
+                                                <div class="avatar">RS</div>
+                                            </div>
+                                            <div class="message-content">
+                                                <div class="message-header">
+                                                    <h4>Dr. Roberto Silva</h4>
+                                                    <span class="message-time">Ayer, 3:15 PM</span>
+                                                </div>
+                                                <p class="message-preview">Hola Carlos, tengo un estudiante con problemas de avance. ¿Podríamos revisar su caso en la próxima reunión de coordinación?...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Anuncios -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Anuncios Institucionales</h3>
+                                    <button class="btn btn-blue">
+                                        <i class="fas fa-plus"></i>
+                                        Nuevo Anuncio
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="announcements-list">
+                                        <div class="announcement-item">
+                                            <div class="announcement-header">
+                                                <h4>Cambios en Cronograma de Entregas</h4>
+                                                <span class="announcement-date">25 Nov 2024</span>
+                                            </div>
+                                            <div class="announcement-meta">
+                                                <span class="announcement-author">Por: Coordinación Académica</span>
+                                                <span class="announcement-priority high">Alta Prioridad</span>
+                                            </div>
+                                            <p class="announcement-preview">Debido a ajustes en el calendario académico, se han modificado las fechas de entrega para el capítulo 4. Por favor revisen el nuevo cronograma...</p>
+                                        </div>
+
+                                        <div class="announcement-item">
+                                            <div class="announcement-header">
+                                                <h4>Reunión de Coordinación Mensual</h4>
+                                                <span class="announcement-date">23 Nov 2024</span>
+                                            </div>
+                                            <div class="announcement-meta">
+                                                <span class="announcement-author">Por: Coordinación Académica</span>
+                                                <span class="announcement-priority medium">Media Prioridad</span>
+                                            </div>
+                                            <p class="announcement-preview">Recordatorio: La próxima reunión de coordinación está programada para el 28 de noviembre a las 10:00 AM en el aula 302...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contactos -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Contactos</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="contacts-grid">
+                                    <div class="contact-item">
+                                        <div class="contact-avatar">
+                                            <div class="avatar large">MG</div>
+                                        </div>
+                                        <div class="contact-info">
+                                            <h4>Dra. María González</h4>
+                                            <p>Profesora Titular - Ingeniería de Sistemas</p>
+                                            <span class="contact-email">maria.gonzalez@universidad.edu</span>
+                                        </div>
+                                        <div class="contact-actions">
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-envelope"></i>
+                                                Email
+                                            </button>
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-comment"></i>
+                                                Mensaje
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-item">
+                                        <div class="contact-avatar">
+                                            <div class="avatar large">RS</div>
+                                        </div>
+                                        <div class="contact-info">
+                                            <h4>Dr. Roberto Silva</h4>
+                                            <p>Profesor Asociado - Ingeniería de Software</p>
+                                            <span class="contact-status online">En línea</span>
+                                        </div>
+                                        <div class="contact-actions">
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-envelope"></i>
+                                                Email
+                                            </button>
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-comment"></i>
+                                                Mensaje
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Configuración -->
+                <div class="section-content" id="settings-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Configuración del Sistema</h2>
+                            <p>Personaliza la plataforma institucional</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Configuración de Notificaciones</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Alertas de Proyectos en Riesgo</h4>
+                                            <p>Recibe notificaciones cuando un proyecto presente retrasos significativos</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Reportes Semanales Automáticos</h4>
+                                            <p>Recibe resúmenes semanales del estado de todos los proyectos</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Alertas Predictivas IA</h4>
+                                            <p>Notificaciones del sistema de inteligencia artificial sobre riesgos potenciales</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Configuración del Sistema</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="settings-form">
+                                    <div class="form-group">
+                                        <label for="institution-name">Nombre de la Institución</label>
+                                        <input type="text" id="institution-name" value="Universidad Tecnológica Nacional" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="coordinator-name">Nombre del Coordinador</label>
+                                        <input type="text" id="coordinator-name" value="Carlos López" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="academic-period">Periodo Académico Actual</label>
+                                        <input type="text" id="academic-period" value="2024-2" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="max-projects-teacher">Máximo de Proyectos por Docente</label>
+                                        <input type="number" id="max-projects-teacher" value="5" class="form-input">
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-blue">Guardar Configuración</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -309,7 +1445,82 @@
         </main>
     </div>
 
-    <script src="js/auth.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script>
+        // Navegación entre secciones
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item[data-section]');
+            const sectionContents = document.querySelectorAll('.section-content');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const section = item.getAttribute('data-section');
+                    
+                    // Ocultar todas las secciones
+                    sectionContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    
+                    // Mostrar la sección seleccionada
+                    const targetSection = document.getElementById(`${section}-section`);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                    }
+                    
+                    // Actualizar navegación activa
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    item.classList.add('active');
+                    
+                    // Actualizar título de la página
+                    const pageTitle = document.getElementById('page-title');
+                    const sectionNames = {
+                        'overview': 'Panel de Control Institucional',
+                        'projects': 'Gestión de Proyectos - Coordinador',
+                        'teachers': 'Gestión de Docentes - Coordinador',
+                        'students': 'Gestión de Estudiantes - Coordinador',
+                        'analytics': 'Analítica Institucional - Coordinador',
+                        'reports': 'Reportes Institucionales - Coordinador',
+                        'alerts': 'Gestión de Alertas - Coordinador',
+                        'calendar': 'Calendario Institucional - Coordinador',
+                        'communication': 'Comunicación Institucional - Coordinador',
+                        'settings': 'Configuración del Sistema - Coordinador'
+                    };
+                    pageTitle.textContent = sectionNames[section] || 'Panel de Control Institucional';
+                });
+            });
+            
+            // Configurar botón de notificaciones
+            const notificationBtn = document.getElementById('notification-btn');
+            if (notificationBtn) {
+                notificationBtn.addEventListener('click', () => {
+                    alert('Panel de notificaciones - En desarrollo');
+                });
+            }
+            
+            // Configurar botón de cerrar sesión
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
+                        alert('Cerrando sesión...');
+                        // Aquí iría la lógica real de cierre de sesión
+                    }
+                });
+            }
+            
+            // Configurar botones de marcar como leído en alertas
+            const markReadButtons = document.querySelectorAll('.mark-read-btn');
+            markReadButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const alertItem = e.target.closest('.alert-item');
+                    if (alertItem) {
+                        alertItem.classList.remove('unread');
+                        alert('Alerta marcada como leída');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

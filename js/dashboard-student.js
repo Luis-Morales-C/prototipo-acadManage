@@ -37,22 +37,38 @@ class StudentDashboard {
             document.querySelector('#user-avatar').textContent = initials;
         }
     }
+// Configurar navegación entre secciones
+setupNavigation() {
+    const navItems = document.querySelectorAll('.nav-item[data-section]');
+    
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const section = item.getAttribute('data-section');
+            this.switchSection(section);
+            
+            navItems.forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
+        });
+    });
 
-    // Configurar navegación entre secciones
-    setupNavigation() {
-        const navItems = document.querySelectorAll('.nav-item[data-section]');
-        
-        navItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                const section = item.getAttribute('data-section');
-                this.switchSection(section);
-                
-                navItems.forEach(nav => nav.classList.remove('active'));
-                item.classList.add('active');
-            });
+    // Configurar botón de cerrar sesión
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.logout();
         });
     }
+
+    // Configurar botón de notificaciones
+    const notificationBtn = document.getElementById('notification-btn');
+    if (notificationBtn) {
+        notificationBtn.addEventListener('click', () => {
+            this.toggleNotifications();
+        });
+    }
+}
 
     // Cambiar entre secciones del dashboard
     switchSection(section) {
@@ -1509,6 +1525,7 @@ class StudentDashboard {
         };
         return icons[type] || 'info-circle';
     }
+    
 
     // Configurar sistema de notificaciones
     setupNotifications() {

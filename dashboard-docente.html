@@ -64,200 +64,1212 @@
             <!-- Top Bar -->
             <div class="top-bar">
                 <div>
-                    <h1>Panel del Asesor</h1>
+                    <h1 id="page-title">Panel del Asesor</h1>
                     <p class="subtitle">Bienvenida, Dra. María González</p>
                 </div>
                 <div class="user-profile">
-                    <button class="notification-btn">
+                    <button class="notification-btn" id="notification-btn">
                         <i class="fas fa-bell"></i>
                         <span class="notification-badge"></span>
                     </button>
                     <div class="user-info">
                         <div class="user-details">
-                            <div class="user-name">María González</div>
+                            <div class="user-name" id="user-name">María González</div>
                             <div class="user-role">Docente Asesor</div>
                         </div>
-                        <div class="user-avatar">MG</div>
+                        <div class="user-avatar" id="user-avatar">MG</div>
                     </div>
                 </div>
             </div>
 
             <!-- Content Area -->
-            <div class="content-area">
-                <!-- Stats Grid -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon blue">
-                            <i class="fas fa-users"></i>
+            <div class="content-area" id="content-area">
+                <!-- Sección Inicio (Overview) -->
+                <div class="section-content" id="overview-section">
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon blue">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-label">Estudiantes Asesorados</div>
+                            <div class="stat-value" id="advised-students">8</div>
+                            <div class="stat-subtitle">3 requieren atención</div>
                         </div>
-                        <div class="stat-label">Estudiantes Asesorados</div>
-                        <div class="stat-value">8</div>
-                        <div class="stat-subtitle">3 requieren atención</div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon orange">
+                                <i class="fas fa-file-upload"></i>
+                            </div>
+                            <div class="stat-label">Entregas por Revisar</div>
+                            <div class="stat-value" id="pending-reviews">5</div>
+                            <div class="stat-subtitle">2 con retraso</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon green">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="stat-label">Retroalimentaciones</div>
+                            <div class="stat-value" id="pending-feedback">12</div>
+                            <div class="stat-subtitle">Esta semana</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon purple">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-label">Promedio Avance</div>
+                            <div class="stat-value" id="average-progress">64%</div>
+                            <div class="stat-subtitle">De todos los proyectos</div>
+                        </div>
                     </div>
 
-                    <div class="stat-card">
-                        <div class="stat-icon orange">
-                            <i class="fas fa-file-upload"></i>
+                    <!-- Proyectos Asignados -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Proyectos que Asesoro</h2>
+                            <button class="btn btn-outline" id="filter-projects-btn">
+                                <i class="fas fa-filter"></i>
+                                Filtrar
+                            </button>
                         </div>
-                        <div class="stat-label">Entregas por Revisar</div>
-                        <div class="stat-value">5</div>
-                        <div class="stat-subtitle">2 con retraso</div>
+                        <div class="card-body">
+                            <!-- Proyecto 1 -->
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <div>
+                                        <h4>Sistema de Gestión Académica para IES</h4>
+                                        <p>Estudiante: Juan Pérez</p>
+                                        <div class="project-dates">
+                                            <span><i class="fas fa-calendar"></i> Inicio: 15 Ago 2024</span>
+                                            <span><i class="fas fa-clock"></i> Entrega: 30 May 2025</span>
+                                        </div>
+                                    </div>
+                                    <span class="status-badge success">En Desarrollo</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-header">
+                                        <span class="progress-label">Avance</span>
+                                        <span class="progress-value">67%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 67%;"></div>
+                                    </div>
+                                </div>
+                                <div class="button-group">
+                                    <button class="btn btn-blue view-deliveries-btn" data-project-id="1">
+                                        <i class="fas fa-file-alt"></i>
+                                        Ver Entregas
+                                    </button>
+                                    <button class="btn btn-outline feedback-btn" data-project-id="1">
+                                        <i class="fas fa-comment"></i>
+                                        Enviar Retroalimentación
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Proyecto 2 -->
+                            <div class="project-card warning">
+                                <div class="project-header">
+                                    <div>
+                                        <h4>Aplicación Móvil para Gestión de Inventarios</h4>
+                                        <p>Estudiante: Ana Martínez</p>
+                                        <div class="project-dates">
+                                            <span><i class="fas fa-calendar"></i> Inicio: 20 Ago 2024</span>
+                                            <span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Atención requerida</span>
+                                        </div>
+                                    </div>
+                                    <span class="status-badge warning">Con Retraso</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-header">
+                                        <span class="progress-label">Avance</span>
+                                        <span class="progress-value text-warning">42%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill warning" style="width: 42%;"></div>
+                                    </div>
+                                </div>
+                                <div class="button-group">
+                                    <button class="btn btn-blue view-deliveries-btn" data-project-id="2">
+                                        <i class="fas fa-file-alt"></i>
+                                        Ver Entregas
+                                    </button>
+                                    <button class="btn btn-outline feedback-btn" data-project-id="2">
+                                        <i class="fas fa-comment"></i>
+                                        Enviar Retroalimentación
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="stat-card">
-                        <div class="stat-icon green">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <div class="stat-label">Retroalimentaciones</div>
-                        <div class="stat-value">12</div>
-                        <div class="stat-subtitle">Esta semana</div>
-                    </div>
+                    <!-- Two Column Grid -->
+                    <div class="two-column-grid">
+                        <!-- Entregas Pendientes de Revisión -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Entregas Pendientes de Revisión</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="delivery-item">
+                                    <div class="delivery-left">
+                                        <div class="delivery-icon pending">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <div class="delivery-info">
+                                            <h4>Juan Pérez - Marco Teórico</h4>
+                                            <p>Entregado hace 2 días</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-blue review-btn" data-review-id="1">Revisar</button>
+                                </div>
 
-                    <div class="stat-card">
-                        <div class="stat-icon purple">
-                            <i class="fas fa-chart-line"></i>
+                                <div class="delivery-item">
+                                    <div class="delivery-left">
+                                        <div class="delivery-icon pending">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <div class="delivery-info">
+                                            <h4>Ana Martínez - Avance Capítulo 3</h4>
+                                            <p>Entregado hace 5 días</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-blue review-btn" data-review-id="2">Revisar</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat-label">Promedio Avance</div>
-                        <div class="stat-value">64%</div>
-                        <div class="stat-subtitle">De todos los proyectos</div>
+
+                        <!-- Alertas del Sistema -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title"><i class="fas fa-robot"></i> Alertas Predictivas IA</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert-item warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div>
+                                        <strong>Riesgo de Retraso</strong>
+                                        <p>Ana Martínez muestra patrón de entregas irregulares. Probabilidad de retraso: 78%.</p>
+                                    </div>
+                                </div>
+
+                                <div class="alert-item info">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <div>
+                                        <strong>Recomendación</strong>
+                                        <p>Juan Pérez está avanzando bien. Sugiere presentación en próximo seminario.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Proyectos Asignados -->
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title">Proyectos que Asesoro</h2>
-                        <button class="btn btn-outline">
-                            <i class="fas fa-filter"></i>
-                            Filtrar
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <!-- Proyecto 1 -->
-                        <div class="project-card">
-                            <div class="project-header">
-                                <div>
-                                    <h4>Sistema de Gestión Académica para IES</h4>
-                                    <p>Estudiante: Juan Pérez</p>
-                                    <div class="project-dates">
-                                        <span><i class="fas fa-calendar"></i> Inicio: 15 Ago 2024</span>
-                                        <span><i class="fas fa-clock"></i> Entrega: 30 May 2025</span>
+                <!-- Sección Mis Asesorías -->
+                <div class="section-content" id="advisories-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Mis Asesorías</h2>
+                            <p>Gestión de todos los proyectos que asesoras</p>
+                        </div>
+
+                        <!-- Filtros -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="filter-bar">
+                                    <div class="filter-group">
+                                        <label for="status-filter-advisories">Filtrar por estado:</label>
+                                        <select id="status-filter-advisories" class="form-select">
+                                            <option value="all">Todos los proyectos</option>
+                                            <option value="active">En desarrollo</option>
+                                            <option value="delayed">Con retraso</option>
+                                            <option value="completed">Completados</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <label for="student-filter">Filtrar por estudiante:</label>
+                                        <select id="student-filter" class="form-select">
+                                            <option value="all">Todos los estudiantes</option>
+                                            <option value="juan">Juan Pérez</option>
+                                            <option value="ana">Ana Martínez</option>
+                                            <option value="carlos">Carlos Rodríguez</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <span class="status-badge success">En Desarrollo</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-header">
-                                    <span class="progress-label">Avance</span>
-                                    <span class="progress-value">67%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 67%;"></div>
-                                </div>
-                            </div>
-                            <div class="button-group">
-                                <button class="btn btn-blue">
-                                    <i class="fas fa-file-alt"></i>
-                                    Ver Entregas
-                                </button>
-                                <button class="btn btn-outline">
-                                    <i class="fas fa-comment"></i>
-                                    Enviar Retroalimentación
-                                </button>
                             </div>
                         </div>
 
-                        <!-- Proyecto 2 -->
-                        <div class="project-card warning">
-                            <div class="project-header">
-                                <div>
-                                    <h4>Aplicación Móvil para Gestión de Inventarios</h4>
-                                    <p>Estudiante: Ana Martínez</p>
-                                    <div class="project-dates">
-                                        <span><i class="fas fa-calendar"></i> Inicio: 20 Ago 2024</span>
-                                        <span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Atención requerida</span>
+                        <!-- Lista de Proyectos Asesorados -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Proyectos Asesorados</h3>
+                                <span class="badge" id="total-projects-count">8 proyectos</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="advisory-projects-list">
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <div>
+                                                <h4>Sistema de Gestión Académica para IES</h4>
+                                                <p><strong>Estudiante:</strong> Juan Pérez</p>
+                                                <p><strong>Programa:</strong> Ingeniería de Sistemas</p>
+                                                <div class="project-dates">
+                                                    <span><i class="fas fa-calendar"></i> Inicio: 15 Ago 2024</span>
+                                                    <span><i class="fas fa-clock"></i> Entrega: 30 May 2025</span>
+                                                </div>
+                                            </div>
+                                            <span class="status-badge success">En Desarrollo</span>
+                                        </div>
+                                        <div class="progress-bar-container">
+                                            <div class="progress-header">
+                                                <span class="progress-label">Avance</span>
+                                                <span class="progress-value">67%</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 67%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="project-meta">
+                                            <div class="meta-item">
+                                                <i class="fas fa-file-alt"></i>
+                                                <span>Última entrega: 15 Nov 2024</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-comments"></i>
+                                                <span>Retroalimentaciones: 3</span>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button class="btn btn-blue view-deliveries-btn" data-project-id="1">
+                                                <i class="fas fa-file-alt"></i>
+                                                Ver Entregas
+                                            </button>
+                                            <button class="btn btn-outline feedback-btn" data-project-id="1">
+                                                <i class="fas fa-comment"></i>
+                                                Enviar Retroalimentación
+                                            </button>
+                                            <button class="btn btn-outline schedule-meeting-btn" data-project-id="1">
+                                                <i class="fas fa-video"></i>
+                                                Programar Reunión
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="project-card warning">
+                                        <div class="project-header">
+                                            <div>
+                                                <h4>Aplicación Móvil para Gestión de Inventarios</h4>
+                                                <p><strong>Estudiante:</strong> Ana Martínez</p>
+                                                <p><strong>Programa:</strong> Ingeniería de Sistemas</p>
+                                                <div class="project-dates">
+                                                    <span><i class="fas fa-calendar"></i> Inicio: 20 Ago 2024</span>
+                                                    <span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Atención requerida</span>
+                                                </div>
+                                            </div>
+                                            <span class="status-badge warning">Con Retraso</span>
+                                        </div>
+                                        <div class="progress-bar-container">
+                                            <div class="progress-header">
+                                                <span class="progress-label">Avance</span>
+                                                <span class="progress-value text-warning">42%</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill warning" style="width: 42%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="project-meta">
+                                            <div class="meta-item">
+                                                <i class="fas fa-file-alt"></i>
+                                                <span>Última entrega: 10 Nov 2024</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                                <span>Retraso: 5 días</span>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button class="btn btn-blue view-deliveries-btn" data-project-id="2">
+                                                <i class="fas fa-file-alt"></i>
+                                                Ver Entregas
+                                            </button>
+                                            <button class="btn btn-outline feedback-btn" data-project-id="2">
+                                                <i class="fas fa-comment"></i>
+                                                Enviar Retroalimentación
+                                            </button>
+                                            <button class="btn btn-outline schedule-meeting-btn" data-project-id="2">
+                                                <i class="fas fa-video"></i>
+                                                Programar Reunión
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                                <span class="status-badge warning">Con Retraso</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-header">
-                                    <span class="progress-label">Avance</span>
-                                    <span class="progress-value text-warning">42%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill warning" style="width: 42%;"></div>
-                                </div>
-                            </div>
-                            <div class="button-group">
-                                <button class="btn btn-blue">
-                                    <i class="fas fa-file-alt"></i>
-                                    Ver Entregas
-                                </button>
-                                <button class="btn btn-outline">
-                                    <i class="fas fa-comment"></i>
-                                    Enviar Retroalimentación
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Two Column Grid -->
-                <div class="two-column-grid">
-                    <!-- Entregas Pendientes de Revisión -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Entregas Pendientes de Revisión</h3>
+                <!-- Sección Revisiones Pendientes -->
+                <div class="section-content" id="reviews-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Revisiones Pendientes</h2>
+                            <p>Gestiona las entregas que requieren tu revisión</p>
                         </div>
-                        <div class="card-body">
-                            <div class="delivery-item">
-                                <div class="delivery-left">
-                                    <div class="delivery-icon pending">
-                                        <i class="fas fa-file-alt"></i>
-                                    </div>
-                                    <div class="delivery-info">
-                                        <h4>Juan Pérez - Marco Teórico</h4>
-                                        <p>Entregado hace 2 días</p>
-                                    </div>
-                                </div>
-                                <button class="btn btn-blue">Revisar</button>
-                            </div>
 
-                            <div class="delivery-item">
-                                <div class="delivery-left">
-                                    <div class="delivery-icon pending">
-                                        <i class="fas fa-file-alt"></i>
+                        <!-- Filtros -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="filter-bar">
+                                    <div class="filter-group">
+                                        <label for="priority-filter">Filtrar por prioridad:</label>
+                                        <select id="priority-filter" class="form-select">
+                                            <option value="all">Todas las prioridades</option>
+                                            <option value="high">Alta prioridad</option>
+                                            <option value="medium">Media prioridad</option>
+                                            <option value="low">Baja prioridad</option>
+                                        </select>
                                     </div>
-                                    <div class="delivery-info">
-                                        <h4>Ana Martínez - Avance Capítulo 3</h4>
-                                        <p>Entregado hace 5 días</p>
+                                    <div class="filter-group">
+                                        <label for="days-filter">Filtrar por antigüedad:</label>
+                                        <select id="days-filter" class="form-select">
+                                            <option value="all">Todas las entregas</option>
+                                            <option value="today">Hoy</option>
+                                            <option value="week">Esta semana</option>
+                                            <option value="month">Este mes</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <button class="btn btn-blue">Revisar</button>
+                            </div>
+                        </div>
+
+                        <!-- Lista de Revisiones Pendientes -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Entregas por Revisar</h3>
+                                <span class="badge" id="pending-reviews-count">5 pendientes</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="reviews-list">
+                                    <div class="delivery-item urgent">
+                                        <div class="delivery-left">
+                                            <div class="delivery-icon pending urgent">
+                                                <i class="fas fa-exclamation"></i>
+                                            </div>
+                                            <div class="delivery-info">
+                                                <h4>Ana Martínez - Avance Capítulo 3</h4>
+                                                <p><strong>Proyecto:</strong> Aplicación Móvil para Gestión de Inventarios</p>
+                                                <p><strong>Entregado:</strong> Hace 5 días</p>
+                                                <small>Capítulo 3 - Metodología de desarrollo y diseño de la aplicación móvil</small>
+                                            </div>
+                                        </div>
+                                        <div class="delivery-status">
+                                            <button class="btn btn-blue review-btn" data-review-id="2">
+                                                <i class="fas fa-edit"></i>
+                                                Revisar
+                                            </button>
+                                            <span class="status-badge warning">Alta Prioridad</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="delivery-item">
+                                        <div class="delivery-left">
+                                            <div class="delivery-icon pending">
+                                                <i class="fas fa-file-alt"></i>
+                                            </div>
+                                            <div class="delivery-info">
+                                                <h4>Juan Pérez - Marco Teórico</h4>
+                                                <p><strong>Proyecto:</strong> Sistema de Gestión Académica para IES</p>
+                                                <p><strong>Entregado:</strong> Hace 2 días</p>
+                                                <small>Documento completo del marco teórico con referencias actualizadas</small>
+                                            </div>
+                                        </div>
+                                        <div class="delivery-status">
+                                            <button class="btn btn-blue review-btn" data-review-id="1">
+                                                <i class="fas fa-edit"></i>
+                                                Revisar
+                                            </button>
+                                            <span class="status-badge info">Media Prioridad</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="delivery-item">
+                                        <div class="delivery-left">
+                                            <div class="delivery-icon pending">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </div>
+                                            <div class="delivery-info">
+                                                <h4>Carlos Rodríguez - Análisis de Requerimientos</h4>
+                                                <p><strong>Proyecto:</strong> Plataforma E-learning para Matemáticas</p>
+                                                <p><strong>Entregado:</strong> Hace 1 día</p>
+                                                <small>Análisis detallado de requerimientos funcionales y no funcionales</small>
+                                            </div>
+                                        </div>
+                                        <div class="delivery-status">
+                                            <button class="btn btn-blue review-btn" data-review-id="3">
+                                                <i class="fas fa-edit"></i>
+                                                Revisar
+                                            </button>
+                                            <span class="status-badge">Baja Prioridad</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Historial de Revisiones -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Historial de Revisiones</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="reviews-history">
+                                    <div class="delivery-item completed">
+                                        <div class="delivery-left">
+                                            <div class="delivery-icon completed">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="delivery-info">
+                                                <h4>Laura Sánchez - Propuesta de Proyecto</h4>
+                                                <p><strong>Proyecto:</strong> Sistema de Recomendación para Bibliotecas</p>
+                                                <p><strong>Revisado:</strong> 18 Nov 2024</p>
+                                                <small>Propuesta inicial del proyecto con objetivos y metodología</small>
+                                            </div>
+                                        </div>
+                                        <div class="delivery-status">
+                                            <span class="status-badge success">Aprobado</span>
+                                            <button class="btn btn-outline view-feedback-btn">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Retroalimentación
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="delivery-item completed">
+                                        <div class="delivery-left">
+                                            <div class="delivery-icon completed">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <div class="delivery-info">
+                                                <h4>Miguel Torres - Estado del Arte</h4>
+                                                <p><strong>Proyecto:</strong> Herramienta de Análisis de Datos Educativos</p>
+                                                <p><strong>Revisado:</strong> 15 Nov 2024</p>
+                                                <small>Revisión bibliográfica y análisis del estado del arte</small>
+                                            </div>
+                                        </div>
+                                        <div class="delivery-status">
+                                            <span class="status-badge success">Aprobado con Observaciones</span>
+                                            <button class="btn btn-outline view-feedback-btn">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Retroalimentación
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Alertas del Sistema -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title"><i class="fas fa-robot"></i> Alertas Predictivas IA</h3>
+               <div class="section-content" id="calendar-section">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Calendario Académico</h2>
+                            <p>Organiza tus actividades y reuniones de asesoría</p>
                         </div>
-                        <div class="card-body">
-                            <div class="alert-item warning">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <div>
-                                    <strong>Riesgo de Retraso</strong>
-                                    <p>Ana Martínez muestra patrón de entregas irregulares. Probabilidad de retraso: 78%.</p>
+
+                        <!-- Controles del Calendario -->
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="calendar-controls">
+                                    <button class="btn btn-outline" id="prev-month">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <h3 class="card-title" id="current-month">Noviembre 2024</h3>
+                                    <button class="btn btn-outline" id="next-month">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="calendar-actions">
+                                    <button class="btn btn-blue" id="new-event-btn">
+                                        <i class="fas fa-plus"></i>
+                                        Nueva Reunión
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Calendario en Cuadrícula Simple -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Noviembre 2024</h3>
+                            </div>
+                            <div class="card-body">
+                                <!-- Encabezado de días -->
+                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: #3b82f6; color: white; border-radius: 8px 8px 0 0;">
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">LUN</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">MAR</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">MIÉ</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">JUE</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">VIE</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">SÁB</div>
+                                    <div style="padding: 12px; text-align: center; font-weight: bold;">DOM</div>
+                                </div>
+                                
+                                <!-- Cuadrícula de días -->
+                                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: #e5e7eb;">
+                                    <!-- Semana 1 -->
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">1</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">2</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">3</div>
+                                    
+                                    <!-- Semana 2 -->
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">4</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">5</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">6</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">7</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">8</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">9</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">10</div>
+                                    
+                                    <!-- Semana 3 -->
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">11</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">12</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">13</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">14</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">
+                                        15
+                                        <div style="font-size: 10px; color: #ef4444; margin-top: 5px;">
+                                            <i class="fas fa-file-alt"></i> Evaluación
+                                        </div>
+                                    </div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">16</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">17</div>
+                                    
+                                    <!-- Semana 4 -->
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">18</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">19</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">20</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">21</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">22</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">23</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">24</div>
+                                    
+                                    <!-- Semana 5 -->
+                                    <div style="background: #fffbeb; padding: 15px; text-align: center; font-weight: bold; border: 2px solid #f59e0b;">
+                                        25
+                                        <div style="font-size: 10px; color: #92400e; margin-top: 5px;">
+                                            <i class="fas fa-file-alt"></i> Entrega Cap. 4
+                                        </div>
+                                    </div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">
+                                        26
+                                        <div style="font-size: 10px; color: #3b82f6; margin-top: 5px;">
+                                            <i class="fas fa-users"></i> Reunión Carlos
+                                        </div>
+                                    </div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">27</div>
+                                    <div style="background: #dbeafe; padding: 15px; text-align: center; font-weight: bold;">
+                                        28
+                                        <div style="font-size: 10px; color: #1e40af; margin-top: 5px;">
+                                            <i class="fas fa-users"></i> Reunión Ana
+                                        </div>
+                                    </div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">29</div>
+                                    <div style="background: white; padding: 15px; text-align: center; font-weight: bold;">30</div>
+                                    <div style="background: #f8fafc; padding: 15px; text-align: center; color: #9ca3af;"></div>
+                                </div>
+                                
+                                <!-- Leyenda de eventos -->
+                                <div style="margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div style="width: 12px; height: 12px; background: #fffbeb; border: 2px solid #f59e0b; border-radius: 2px;"></div>
+                                        <span style="font-size: 14px;">Entrega importante</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div style="width: 12px; height: 12px; background: #dbeafe; border-radius: 2px;"></div>
+                                        <span style="font-size: 14px;">Reunión de asesoría</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div style="width: 12px; height: 12px; background: #fee2e2; border-radius: 2px;"></div>
+                                        <span style="font-size: 14px;">Evaluación</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Próximas Reuniones -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Próximas Reuniones</h3>
+                                <span class="badge" id="upcoming-meetings-count">3 reuniones</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="upcoming-events" id="upcoming-events">
+                                    <div class="event-item">
+                                        <div class="event-date urgent">
+                                            <span class="event-day">28</span>
+                                            <span class="event-month">Nov</span>
+                                        </div>
+                                        <div class="event-details">
+                                            <h4>Reunión de Seguimiento - Ana Martínez</h4>
+                                            <p>Revisión de avances y planificación de próximas entregas</p>
+                                            <div class="event-time">
+                                                <i class="fas fa-clock"></i>
+                                                10:00 AM - 11:30 AM
+                                            </div>
+                                            <div class="meeting-link">
+                                                <i class="fas fa-video"></i>
+                                                <a href="#">Unirse a Zoom</a>
+                                            </div>
+                                        </div>
+                                        <div class="event-actions">
+                                            <span class="status-badge warning">Próxima</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="event-item">
+                                        <div class="event-date">
+                                            <span class="event-day">02</span>
+                                            <span class="event-month">Dic</span>
+                                        </div>
+                                        <div class="event-details">
+                                            <h4>Reunión Grupal - Avances Semestrales</h4>
+                                            <p>Presentación de avances de todos los proyectos asesorados</p>
+                                            <div class="event-time">
+                                                <i class="fas fa-clock"></i>
+                                                2:00 PM - 4:00 PM
+                                            </div>
+                                            <div class="meeting-link">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Aula 302 - Edificio Principal</span>
+                                            </div>
+                                        </div>
+                                        <div class="event-actions">
+                                            <span class="status-badge info">Agendada</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="event-item">
+                                        <div class="event-date">
+                                            <span class="event-day">05</span>
+                                            <span class="event-month">Dic</span>
+                                        </div>
+                                        <div class="event-details">
+                                            <h4>Reunión de Coordinación - Comité de Proyectos</h4>
+                                            <p>Reunión con otros asesores para coordinación de evaluaciones</p>
+                                            <div class="event-time">
+                                                <i class="fas fa-clock"></i>
+                                                9:00 AM - 10:30 AM
+                                            </div>
+                                        </div>
+                                        <div class="event-actions">
+                                            <span class="status-badge">Pendiente</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Evaluaciones -->
+                <div class="section-content" id="evaluations-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Evaluaciones</h2>
+                            <p>Gestiona las evaluaciones y calificaciones de tus estudiantes</p>
+                        </div>
+
+                        <!-- Resumen de Evaluaciones -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon blue">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <div class="stat-label">Evaluaciones Pendientes</div>
+                                <div class="stat-value">3</div>
+                                <div class="stat-subtitle">Este semestre</div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon orange">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="stat-label">Promedio General</div>
+                                <div class="stat-value">4.2</div>
+                                <div class="stat-subtitle">Sobre 5.0</div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon green">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-label">Evaluaciones Completadas</div>
+                                <div class="stat-value">15</div>
+                                <div class="stat-subtitle">Este semestre</div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon purple">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <div class="stat-label">Estudiantes Evaluados</div>
+                                <div class="stat-value">8</div>
+                                <div class="stat-subtitle">De 8 totales</div>
+                            </div>
+                        </div>
+
+                        <!-- Rúbricas de Evaluación -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Rúbricas de Evaluación</h3>
+                                <button class="btn btn-blue" id="new-rubric-btn">
+                                    <i class="fas fa-plus"></i>
+                                    Nueva Rúbrica
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="rubrics-list">
+                                    <div class="rubric-item">
+                                        <div class="rubric-header">
+                                            <h4>Rúbrica para Proyectos de Grado</h4>
+                                            <span class="status-badge success">Activa</span>
+                                        </div>
+                                        <p>Evaluación integral de proyectos de grado en ingeniería de sistemas</p>
+                                        <div class="rubric-meta">
+                                            <span><i class="fas fa-criteria"></i> 5 criterios</span>
+                                            <span><i class="fas fa-weight"></i> Ponderación total: 100%</span>
+                                            <span><i class="fas fa-calendar"></i> Última actualización: 15 Oct 2024</span>
+                                        </div>
+                                        <div class="button-group">
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Detalles
+                                            </button>
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-edit"></i>
+                                                Editar
+                                            </button>
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-clipboard-check"></i>
+                                                Usar para Evaluación
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="rubric-item">
+                                        <div class="rubric-header">
+                                            <h4>Rúbrica para Presentaciones Orales</h4>
+                                            <span class="status-badge">Inactiva</span>
+                                        </div>
+                                        <p>Evaluación de presentaciones orales y defensas de proyectos</p>
+                                        <div class="rubric-meta">
+                                            <span><i class="fas fa-criteria"></i> 4 criterios</span>
+                                            <span><i class="fas fa-weight"></i> Ponderación total: 100%</span>
+                                            <span><i class="fas fa-calendar"></i> Última actualización: 20 Sep 2024</span>
+                                        </div>
+                                        <div class="button-group">
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Detalles
+                                            </button>
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-edit"></i>
+                                                Editar
+                                            </button>
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-clipboard-check"></i>
+                                                Usar para Evaluación
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Evaluaciones Pendientes -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Evaluaciones Pendientes</h3>
+                                <span class="badge">3</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="evaluations-list">
+                                    <div class="evaluation-item">
+                                        <div class="evaluation-header">
+                                            <h4>Evaluación Final - Juan Pérez</h4>
+                                            <span class="status-badge warning">Vence en 5 días</span>
+                                        </div>
+                                        <p><strong>Proyecto:</strong> Sistema de Gestión Académica para IES</p>
+                                        <p><strong>Fecha límite:</strong> 30 Nov 2024</p>
+                                        <div class="button-group">
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-clipboard-check"></i>
+                                                Realizar Evaluación
+                                            </button>
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Proyecto
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="evaluation-item">
+                                        <div class="evaluation-header">
+                                            <h4>Evaluación Intermedia - Ana Martínez</h4>
+                                            <span class="status-badge warning">Vence en 7 días</span>
+                                        </div>
+                                        <p><strong>Proyecto:</strong> Aplicación Móvil para Gestión de Inventarios</p>
+                                        <p><strong>Fecha límite:</strong> 02 Dic 2024</p>
+                                        <div class="button-group">
+                                            <button class="btn btn-blue">
+                                                <i class="fas fa-clipboard-check"></i>
+                                                Realizar Evaluación
+                                            </button>
+                                            <button class="btn btn-outline">
+                                                <i class="fas fa-eye"></i>
+                                                Ver Proyecto
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Reportes -->
+                <div class="section-content" id="reports-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Reportes y Análisis</h2>
+                            <p>Genera reportes y visualiza el progreso de tus estudiantes</p>
+                        </div>
+
+                        <!-- Filtros para Reportes -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="filter-bar">
+                                    <div class="filter-group">
+                                        <label for="report-type">Tipo de Reporte:</label>
+                                        <select id="report-type" class="form-select">
+                                            <option value="progress">Progreso de Proyectos</option>
+                                            <option value="evaluations">Resultados de Evaluaciones</option>
+                                            <option value="timeline">Línea de Tiempo</option>
+                                            <option value="comparative">Comparativo entre Estudiantes</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <label for="time-range">Rango de Tiempo:</label>
+                                        <select id="time-range" class="form-select">
+                                            <option value="semester">Este Semestre</option>
+                                            <option value="month">Último Mes</option>
+                                            <option value="week">Última Semana</option>
+                                            <option value="custom">Personalizado</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <button class="btn btn-blue" id="generate-report-btn">
+                                            <i class="fas fa-download"></i>
+                                            Generar Reporte
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gráficos y Estadísticas -->
+                        <div class="two-column-grid">
+                            <!-- Progreso General -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Progreso General de Proyectos</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <div class="chart-placeholder">
+                                            <div class="chart-bars">
+                                                <div class="chart-bar" style="height: 80%;" data-month="Juan Pérez">
+                                                    <div class="chart-value">80%</div>
+                                                </div>
+                                                <div class="chart-bar" style="height: 65%;" data-month="Ana Martínez">
+                                                    <div class="chart-value">65%</div>
+                                                </div>
+                                                <div class="chart-bar" style="height: 75%;" data-month="Carlos Rodríguez">
+                                                    <div class="chart-value">75%</div>
+                                                </div>
+                                                <div class="chart-bar" style="height: 90%;" data-month="Laura Sánchez">
+                                                    <div class="chart-value">90%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-summary">
+                                        <p><strong>Promedio de avance:</strong> 77.5%</p>
+                                        <p><strong>Proyectos en riesgo:</strong> 1 de 8</p>
+                                        <p><strong>Tasa de finalización:</strong> 85%</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="alert-item info">
-                                <i class="fas fa-lightbulb"></i>
-                                <div>
-                                    <strong>Recomendación</strong>
-                                    <p>Juan Pérez está avanzando bien. Sugiere presentación en próximo seminario.</p>
+                            <!-- Distribución de Calificaciones -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Distribución de Calificaciones</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="progress-stats">
+                                        <div class="progress-item">
+                                            <div class="progress-header">
+                                                <span class="progress-label">Excelente (4.5-5.0)</span>
+                                                <span class="progress-value">3 estudiantes</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 37.5%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-item">
+                                            <div class="progress-header">
+                                                <span class="progress-label">Bueno (4.0-4.4)</span>
+                                                <span class="progress-value">4 estudiantes</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 50%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-item">
+                                            <div class="progress-header">
+                                                <span class="progress-label">Regular (3.5-3.9)</span>
+                                                <span class="progress-value">1 estudiante</span>
+                                            </div>
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 12.5%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reporte Detallado -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Reporte Detallado por Estudiante</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="report-table">
+                                    <table class="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Estudiante</th>
+                                                <th>Proyecto</th>
+                                                <th>Avance</th>
+                                                <th>Última Entrega</th>
+                                                <th>Calificación</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Juan Pérez</td>
+                                                <td>Sistema de Gestión Académica para IES</td>
+                                                <td>
+                                                    <div class="progress-bar small">
+                                                        <div class="progress-fill" style="width: 80%;"></div>
+                                                    </div>
+                                                    <span>80%</span>
+                                                </td>
+                                                <td>15 Nov 2024</td>
+                                                <td>4.5</td>
+                                                <td><span class="status-badge success">En Desarrollo</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ana Martínez</td>
+                                                <td>Aplicación Móvil para Gestión de Inventarios</td>
+                                                <td>
+                                                    <div class="progress-bar small">
+                                                        <div class="progress-fill warning" style="width: 65%;"></div>
+                                                    </div>
+                                                    <span>65%</span>
+                                                </td>
+                                                <td>10 Nov 2024</td>
+                                                <td>3.8</td>
+                                                <td><span class="status-badge warning">Con Retraso</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Carlos Rodríguez</td>
+                                                <td>Plataforma E-learning para Matemáticas</td>
+                                                <td>
+                                                    <div class="progress-bar small">
+                                                        <div class="progress-fill" style="width: 75%;"></div>
+                                                    </div>
+                                                    <span>75%</span>
+                                                </td>
+                                                <td>18 Nov 2024</td>
+                                                <td>4.2</td>
+                                                <td><span class="status-badge success">En Desarrollo</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección Configuración -->
+                <div class="section-content" id="settings-section" style="display: none;">
+                    <div class="content-section">
+                        <div class="section-header">
+                            <h2>Configuración</h2>
+                            <p>Personaliza tu experiencia en la plataforma</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Preferencias de Notificaciones</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Notificaciones por Email</h4>
+                                            <p>Recibe notificaciones importantes por correo electrónico</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Alertas de Nuevas Entregas</h4>
+                                            <p>Notificaciones cuando estudiantes envíen nuevas entregas</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Recordatorios de Reuniones</h4>
+                                            <p>Alertas automáticas para reuniones programadas</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Reportes Semanales</h4>
+                                            <p>Recibe resúmenes semanales del progreso de tus estudiantes</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Información Personal</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="settings-form">
+                                    <div class="form-group">
+                                        <label for="teacher-name">Nombre Completo</label>
+                                        <input type="text" id="teacher-name" value="María González" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="teacher-email">Correo Electrónico</label>
+                                        <input type="email" id="teacher-email" value="maria.gonzalez@universidad.edu" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="teacher-department">Departamento</label>
+                                        <input type="text" id="teacher-department" value="Ingeniería de Sistemas" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="teacher-office">Oficina</label>
+                                        <input type="text" id="teacher-office" value="Edificio Principal, Oficina 204" class="form-input">
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-blue">Guardar Cambios</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Preferencias de Asesoría</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Máximo de Estudiantes por Semestre</h4>
+                                            <p>Límite de estudiantes que puedes asesorar simultáneamente</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <select class="form-select">
+                                                <option>5</option>
+                                                <option selected>8</option>
+                                                <option>10</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Duración de Reuniones</h4>
+                                            <p>Duración predeterminada para reuniones de asesoría</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <select class="form-select">
+                                                <option>30 minutos</option>
+                                                <option selected>45 minutos</option>
+                                                <option>60 minutos</option>
+                                                <option>90 minutos</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Recordatorio de Evaluaciones</h4>
+                                            <p>Días de anticipación para recordatorios de evaluaciones pendientes</p>
+                                        </div>
+                                        <div class="setting-control">
+                                            <select class="form-select">
+                                                <option>1 día</option>
+                                                <option selected>3 días</option>
+                                                <option>5 días</option>
+                                                <option>7 días</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -267,7 +1279,324 @@
         </main>
     </div>
 
-    <script src="js/auth.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script>
+        // Dashboard específico para Docentes
+        class TeacherDashboard {
+            constructor() {
+                this.currentSection = 'overview';
+                this.teacherData = null;
+                this.init();
+            }
+
+            init() {
+                this.checkAuthentication();
+                this.setupNavigation();
+                this.setupEventListeners();
+                this.loadTeacherData();
+                this.setupNotifications();
+            }
+
+            checkAuthentication() {
+                const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                if (!currentUser || currentUser.role !== 'teacher') {
+                    window.location.href = 'index.html';
+                    return;
+                }
+                this.updateUserInfo(currentUser);
+            }
+
+            updateUserInfo(user) {
+                if (user.name) {
+                    document.querySelector('.user-name').textContent = user.name;
+                    document.querySelector('.subtitle').textContent = `Bienvenida, ${user.name}`;
+                    const initials = user.name.split(' ').map(n => n[0]).join('');
+                    document.querySelector('.user-avatar').textContent = initials;
+                }
+            }
+
+            setupNavigation() {
+                const navItems = document.querySelectorAll('.nav-item[data-section]');
+                const sectionContents = document.querySelectorAll('.section-content');
+                
+                navItems.forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const section = item.getAttribute('data-section');
+                        
+                        // Ocultar todas las secciones
+                        sectionContents.forEach(content => {
+                            content.style.display = 'none';
+                        });
+                        
+                        // Mostrar la sección seleccionada
+                        const targetSection = document.getElementById(`${section}-section`);
+                        if (targetSection) {
+                            targetSection.style.display = 'block';
+                        }
+                        
+                        // Actualizar navegación activa
+                        navItems.forEach(nav => nav.classList.remove('active'));
+                        item.classList.add('active');
+                        
+                        // Actualizar título de la página
+                        const pageTitle = document.getElementById('page-title');
+                        const sectionNames = {
+                            'overview': 'Panel del Asesor',
+                            'advisories': 'Mis Asesorías - Docente',
+                            'reviews': 'Revisiones Pendientes - Docente',
+                            'calendar': 'Calendario - Docente',
+                            'evaluations': 'Evaluaciones - Docente',
+                            'reports': 'Reportes - Docente',
+                            'settings': 'Configuración - Docente'
+                        };
+                        pageTitle.textContent = sectionNames[section] || 'Panel del Asesor';
+                    });
+                });
+            }
+
+            setupEventListeners() {
+                // Botones de revisión
+                const reviewButtons = document.querySelectorAll('.review-btn');
+                reviewButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const reviewId = button.getAttribute('data-review-id');
+                        this.handleReview(reviewId);
+                    });
+                });
+
+                // Botones de retroalimentación
+                const feedbackButtons = document.querySelectorAll('.feedback-btn');
+                feedbackButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const projectId = button.getAttribute('data-project-id');
+                        this.provideFeedback(projectId);
+                    });
+                });
+
+                // Botones de ver entregas
+                const viewDeliveriesButtons = document.querySelectorAll('.view-deliveries-btn');
+                viewDeliveriesButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const projectId = button.getAttribute('data-project-id');
+                        this.viewProjectDeliveries(projectId);
+                    });
+                });
+
+                // Botón de notificaciones
+                const notificationBtn = document.getElementById('notification-btn');
+                if (notificationBtn) {
+                    notificationBtn.addEventListener('click', () => {
+                        this.toggleNotifications();
+                    });
+                }
+
+                // Botón de cerrar sesión
+                const logoutBtn = document.getElementById('logout-btn');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
+                            this.logout();
+                        }
+                    });
+                }
+
+                // Botones del calendario
+                const newEventBtn = document.getElementById('new-event-btn');
+                if (newEventBtn) {
+                    newEventBtn.addEventListener('click', () => {
+                        this.showNotification('Funcionalidad de nueva reunión en desarrollo', 'info');
+                    });
+                }
+
+                // Botones de evaluación
+                const newRubricBtn = document.getElementById('new-rubric-btn');
+                if (newRubricBtn) {
+                    newRubricBtn.addEventListener('click', () => {
+                        this.showNotification('Funcionalidad de nueva rúbrica en desarrollo', 'info');
+                    });
+                }
+
+                // Botón de generar reporte
+                const generateReportBtn = document.getElementById('generate-report-btn');
+                if (generateReportBtn) {
+                    generateReportBtn.addEventListener('click', () => {
+                        this.generateReport();
+                    });
+                }
+            }
+
+            loadTeacherData() {
+                // Datos simulados del docente
+                this.teacherData = {
+                    name: "María González",
+                    teacherId: "PROF-001",
+                    department: "Ingeniería de Sistemas",
+                    advisedStudents: 8,
+                    pendingReviews: 5,
+                    pendingFeedback: 12,
+                    atRiskProjects: 2,
+                    averageProgress: 64,
+                    advisedProjects: [
+                        {
+                            id: 1,
+                            title: "Sistema de Gestión Académica para IES",
+                            student: "Juan Pérez",
+                            startDate: "2024-08-15",
+                            endDate: "2025-05-30",
+                            progress: 67,
+                            status: "En Desarrollo",
+                            lastActivity: "2024-11-20",
+                            riskLevel: "low"
+                        },
+                        {
+                            id: 2,
+                            title: "Aplicación Móvil para Gestión de Inventarios",
+                            student: "Ana Martínez",
+                            startDate: "2024-08-20",
+                            endDate: "2025-05-30",
+                            progress: 42,
+                            status: "Con Retraso",
+                            lastActivity: "2024-11-10",
+                            riskLevel: "high"
+                        }
+                    ],
+                    pendingReviewsList: [
+                        {
+                            id: 1,
+                            student: "Juan Pérez",
+                            delivery: "Marco Teórico",
+                            submittedDate: "2024-11-19",
+                            daysAgo: 2,
+                            priority: "medium"
+                        },
+                        {
+                            id: 2,
+                            student: "Ana Martínez",
+                            delivery: "Avance Capítulo 3",
+                            submittedDate: "2024-11-16",
+                            daysAgo: 5,
+                            priority: "high"
+                        }
+                    ]
+                };
+
+                this.updateDashboard();
+            }
+
+            updateDashboard() {
+                if (!this.teacherData) return;
+
+                this.updateStats();
+            }
+
+            updateStats() {
+                const stats = {
+                    'advised-students': this.teacherData.advisedStudents,
+                    'pending-reviews': this.teacherData.pendingReviews,
+                    'pending-feedback': this.teacherData.pendingFeedback,
+                    'average-progress': `${this.teacherData.averageProgress}%`
+                };
+
+                Object.keys(stats).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.textContent = stats[key];
+                    }
+                });
+            }
+
+            handleReview(reviewId) {
+                this.showNotification(`Iniciando revisión para entrega ID: ${reviewId}`, 'info');
+            }
+
+            provideFeedback(projectId) {
+                this.showNotification(`Abriendo formulario de retroalimentación para proyecto ID: ${projectId}`, 'info');
+            }
+
+            viewProjectDeliveries(projectId) {
+                this.showNotification(`Mostrando entregas del proyecto ID: ${projectId}`, 'info');
+            }
+
+            toggleNotifications() {
+                this.showNotification('Panel de notificaciones en desarrollo. Próximamente podrás ver todas tus notificaciones aquí.', 'info');
+            }
+
+            generateReport() {
+                this.showNotification('Generando reporte... Esta funcionalidad estará disponible próximamente.', 'info');
+            }
+
+            logout() {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            }
+
+            setupNotifications() {
+                const notifications = [
+                    { id: 1, message: 'Nueva entrega pendiente de revisión', read: false },
+                    { id: 2, message: 'Recordatorio: Reunión de avance programada', read: false }
+                ];
+                this.updateNotificationBadge(notifications.filter(n => !n.read).length);
+            }
+
+            updateNotificationBadge(count) {
+                const badge = document.querySelector('.notification-badge');
+                if (badge) {
+                    badge.style.display = count > 0 ? 'block' : 'none';
+                    badge.textContent = count > 9 ? '9+' : count;
+                }
+            }
+
+            showNotification(message, type = 'info') {
+                // Eliminar notificación existente si hay una
+                const existingNotification = document.querySelector('.notification');
+                if (existingNotification) {
+                    existingNotification.remove();
+                }
+
+                const notification = document.createElement('div');
+                notification.className = `notification notification-${type}`;
+                notification.innerHTML = `
+                    <div class="notification-content">
+                        <i class="fas fa-${this.getAlertIcon(type)}"></i>
+                        <span>${message}</span>
+                    </div>
+                    <button class="notification-close">&times;</button>
+                `;
+
+                document.body.appendChild(notification);
+
+                // Auto-remover después de 5 segundos
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 5000);
+
+                // Cerrar manualmente
+                const closeBtn = notification.querySelector('.notification-close');
+                closeBtn.addEventListener('click', () => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                });
+            }
+
+            getAlertIcon(type) {
+                const icons = {
+                    success: 'check-circle',
+                    warning: 'exclamation-triangle',
+                    info: 'info-circle',
+                    error: 'exclamation-circle'
+                };
+                return icons[type] || 'info-circle';
+            }
+        }
+
+        // Inicializar dashboard del docente
+        document.addEventListener('DOMContentLoaded', function() {
+            const dashboard = new TeacherDashboard();
+        });
+    </script>
 </body>
 </html>
