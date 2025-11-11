@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcadManage - Panel del Estudiante</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="sidebar-title">AcadManage</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="overview">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#" class="nav-item" data-section="projects">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Mi Proyecto</span>
+                </a>
+                <a href="#" class="nav-item" data-section="deliveries">
+                    <i class="fas fa-file-upload"></i>
+                    <span>Entregas</span>
+                    <span class="badge">2</span>
+                </a>
+                <a href="#" class="nav-item" data-section="tasks">
+                    <i class="fas fa-tasks"></i>
+                    <span>Tareas</span>
+                    <span class="badge">3</span>
+                </a>
+                <a href="#" class="nav-item" data-section="calendar">
+                    <i class="fas fa-calendar"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="#" class="nav-item" data-section="communication">
+                    <i class="fas fa-comments"></i>
+                    <span>Comunicación</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Configuración</span>
+                </a>
+                <a href="#" class="nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div>
+                    <h1 id="page-title">Panel del Estudiante</h1>
+                    <p class="subtitle">Bienvenido, <span id="user-name">Juan Pérez</span></p>
+                </div>
+                <div class="user-profile">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="user-info">
+                        <div class="user-details">
+                            <div class="user-name" id="top-user-name">Juan Pérez</div>
+                            <div class="user-role">Estudiante</div>
+                        </div>
+                        <div class="user-avatar" id="user-avatar">JP</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area" id="content-area">
+                <!-- El contenido se cargará dinámicamente aquí -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard-student.js"></script>
+</body>
+</html>

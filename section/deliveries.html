@@ -1,0 +1,95 @@
+<div class="content-section">
+    <div class="section-header">
+        <h2>Gestión de Entregas</h2>
+        <p>Administra y realiza tus entregas académicas</p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="card">
+        <div class="card-body">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="status-filter">Filtrar por estado:</label>
+                    <select id="status-filter" class="form-select">
+                        <option value="all">Todas las entregas</option>
+                        <option value="pending">Pendientes</option>
+                        <option value="completed">Completadas</option>
+                        <option value="overdue">Vencidas</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="type-filter">Tipo de entrega:</label>
+                    <select id="type-filter" class="form-select">
+                        <option value="all">Todos los tipos</option>
+                        <option value="chapter">Capítulos</option>
+                        <option value="analysis">Análisis</option>
+                        <option value="proposal">Propuestas</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista de Entregas -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Mis Entregas</h3>
+            <span class="badge" id="pending-deliveries-count">2 pendientes</span>
+        </div>
+        <div class="card-body">
+            <div class="deliveries-list" id="deliveries-list">
+                <!-- Se llena dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Historial de Entregas -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Historial de Entregas</h3>
+        </div>
+        <div class="card-body">
+            <div class="delivery-history">
+                <div class="delivery-item completed">
+                    <div class="delivery-left">
+                        <div class="delivery-icon completed">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="delivery-info">
+                            <h4>Marco Teórico</h4>
+                            <p>Entregado: 14 Nov 2024</p>
+                            <small>Documento completo del marco teórico con referencias actualizadas</small>
+                        </div>
+                    </div>
+                    <div class="delivery-status">
+                        <span class="status-badge success">En Revisión</span>
+                        <button class="btn btn-outline view-feedback-btn">
+                            <i class="fas fa-comment"></i>
+                            Ver Retroalimentación
+                        </button>
+                    </div>
+                </div>
+
+                <div class="delivery-item completed">
+                    <div class="delivery-left">
+                        <div class="delivery-icon completed">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="delivery-info">
+                            <h4>Capítulo 3 - Metodología</h4>
+                            <p>Entregado: 30 Oct 2024</p>
+                            <small>Metodología de investigación y diseño del sistema</small>
+                        </div>
+                    </div>
+                    <div class="delivery-status">
+                        <span class="status-badge success">Aprobado</span>
+                        <button class="btn btn-outline view-feedback-btn">
+                            <i class="fas fa-comment"></i>
+                            Ver Retroalimentación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

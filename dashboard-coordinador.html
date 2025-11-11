@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcadManage - Panel del Coordinador</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="sidebar-title">AcadManage</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="overview">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-section="projects">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Todos los Proyectos</span>
+                    <span class="badge">45</span>
+                </a>
+                <a href="#" class="nav-item" data-section="teachers">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Docentes</span>
+                </a>
+                <a href="#" class="nav-item" data-section="students">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Estudiantes</span>
+                </a>
+                <a href="#" class="nav-item" data-section="analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analítica</span>
+                </a>
+                <a href="#" class="nav-item" data-section="reports">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reportes</span>
+                </a>
+                <a href="#" class="nav-item" data-section="alerts">
+                    <i class="fas fa-bell"></i>
+                    <span>Alertas</span>
+                    <span class="badge">7</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Configuración</span>
+                </a>
+                <a href="#" class="nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div>
+                    <h1>Panel de Control Institucional</h1>
+                    <p class="subtitle">Bienvenido, Coordinador López</p>
+                </div>
+                <div class="user-profile">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge"></span>
+                    </button>
+                    <div class="user-info">
+                        <div class="user-details">
+                            <div class="user-name">Carlos López</div>
+                            <div class="user-role">Coordinador Académico</div>
+                        </div>
+                        <div class="user-avatar">CL</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-label">Total Proyectos Activos</div>
+                        <div class="stat-value">45</div>
+                        <div class="stat-subtitle">+5 este semestre</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-label">Proyectos al Día</div>
+                        <div class="stat-value">32</div>
+                        <div class="stat-subtitle">71% del total</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-label">Requieren Atención</div>
+                        <div class="stat-value">13</div>
+                        <div class="stat-subtitle">29% del total</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="stat-label">Docentes Asesores</div>
+                        <div class="stat-value">12</div>
+                        <div class="stat-subtitle">3.8 proyectos/docente</div>
+                    </div>
+                </div>
+
+                <!-- Gráficos de Analítica -->
+                <div class="two-column-grid">
+                    <!-- Gráfico de Avance Global -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title"><i class="fas fa-chart-bar"></i> Avance Global de Proyectos</h2>
+                            <select class="form-select">
+                                <option>Últimos 6 meses</option>
+                                <option>Este semestre</option>
+                                <option>Este año</option>
+                            </select>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <div class="chart-placeholder">
+                                    <!-- Aquí iría el gráfico real -->
+                                    <p>Gráfico de avance de proyectos por mes</p>
+                                    <div class="chart-bars">
+                                        <div class="chart-bar" style="height: 45%;" data-month="Ago"></div>
+                                        <div class="chart-bar" style="height: 52%;" data-month="Sep"></div>
+                                        <div class="chart-bar" style="height: 58%;" data-month="Oct"></div>
+                                        <div class="chart-bar" style="height: 67%;" data-month="Nov"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-summary">
+                                <p><strong>Promedio de Avance:</strong> 67%</p>
+                                <p><strong>Tendencia:</strong> <span class="text-success">↑ +8% respecto al mes anterior</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estado de Proyectos -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Estado de Proyectos</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="progress-stats">
+                                <div class="progress-item">
+                                    <div class="progress-header">
+                                        <span>En Desarrollo</span>
+                                        <span class="progress-value">32</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 71%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="progress-header">
+                                        <span>Con Retraso</span>
+                                        <span class="progress-value text-warning">8</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill warning" style="width: 18%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="progress-header">
+                                        <span>En Revisión Final</span>
+                                        <span class="progress-value text-info">5</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill info" style="width: 11%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert-banner warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <strong>⚠️ Atención Requerida</strong>
+                                    <p>8 proyectos necesitan seguimiento urgente</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyectos que Requieren Atención -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-exclamation-circle"></i> Proyectos que Requieren Atención</h2>
+                        <div class="button-group">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-print"></i>
+                                Imprimir Reporte
+                            </button>
+                            <button class="btn btn-blue">
+                                <i class="fas fa-download"></i>
+                                Exportar Datos
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="project-card warning">
+                            <div class="project-header">
+                                <div>
+                                    <h4>Aplicación Móvil para Gestión de Inventarios</h4>
+                                    <p>Estudiante: Ana Martínez | Asesor: Dra. María González</p>
+                                    <div class="project-dates">
+                                        <span><i class="fas fa-calendar"></i> Inicio: 20 Ago 2024</span>
+                                        <span class="text-warning"><i class="fas fa-exclamation-triangle"></i> 15 días de retraso</span>
+                                    </div>
+                                </div>
+                                <span class="status-badge warning">Alto Riesgo</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-header">
+                                    <span class="progress-label">Avance</span>
+                                    <span class="progress-value text-warning">42%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill warning" style="width: 42%;"></div>
+                                </div>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn btn-blue">
+                                    <i class="fas fa-info-circle"></i>
+                                    Ver Detalles
+                                </button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-envelope"></i>
+                                    Contactar Asesor
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alertas Predictivas IA -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="fas fa-robot"></i> Alertas Predictivas IA</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="two-column-grid">
+                            <!-- Alertas de Riesgo -->
+                            <div>
+                                <h3 class="section-subtitle">Alertas de Alto Riesgo</h3>
+                                <div class="alert-item danger">
+                                    <i class="fas fa-skull-crossbones"></i>
+                                    <div>
+                                        <strong>Riesgo de Abandono</strong>
+                                        <p>Ana Martínez muestra patrón de inactividad prolongada. Probabilidad de abandono: 78%.</p>
+                                    </div>
+                                </div>
+
+                                <div class="alert-item warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div>
+                                        <strong>Retraso Crítico</strong>
+                                        <p>Luis García tiene 3 entregas pendientes consecutivas. Requiere intervención inmediata.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recomendaciones -->
+                            <div>
+                                <h3 class="section-subtitle">Recomendaciones</h3>
+                                <div class="alert-item info">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <div>
+                                        <strong>Reasignación Sugerida</strong>
+                                        <p>Dr. Roberto Silva tiene 6 proyectos asignados. Considera redistribuir carga.</p>
+                                    </div>
+                                </div>
+
+                                <div class="alert-item success">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <strong>Buen Desempeño</strong>
+                                        <p>Dra. María González mantiene excelente tasa de aprobación (92%).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

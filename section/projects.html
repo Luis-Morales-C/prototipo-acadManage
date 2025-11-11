@@ -1,0 +1,117 @@
+<div class="content-section">
+    <div class="section-header">
+        <h2>Mi Proyecto de Tesis</h2>
+        <p>Gestión y seguimiento de tu proyecto de investigación</p>
+    </div>
+
+    <!-- Información del Proyecto -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Información del Proyecto</h3>
+            <button class="btn btn-outline" id="edit-project-details-btn">
+                <i class="fas fa-edit"></i>
+                Editar Proyecto
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="project-details-grid">
+                <div class="project-main-info">
+                    <h4 id="project-title">Sistema de Gestión Académica para IES</h4>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <strong>Asesor:</strong>
+                            <span id="project-advisor">Dra. María González</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Estado:</strong>
+                            <span class="status-badge success">En Progreso</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Programa:</strong>
+                            <span id="project-program">Ingeniería de Sistemas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-dates">
+                    <div class="date-item">
+                        <i class="fas fa-play-circle"></i>
+                        <div>
+                            <strong>Fecha Inicio</strong>
+                            <p id="project-start-date">15 Ago 2024</p>
+                        </div>
+                    </div>
+                    <div class="date-item">
+                        <i class="fas fa-flag-checkered"></i>
+                        <div>
+                            <strong>Fecha Entrega</strong>
+                            <p id="project-end-date">30 May 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Descripción -->
+            <div class="project-description">
+                <h5>Descripción del Proyecto</h5>
+                <p id="project-description">Desarrollo de una plataforma web para la gestión integral de procesos académicos en instituciones de educación superior.</p>
+            </div>
+
+            <!-- Progreso -->
+            <div class="progress-section">
+                <div class="progress-bar-container">
+                    <div class="progress-header">
+                        <span class="progress-label">Avance General del Proyecto</span>
+                        <span class="progress-value" id="project-progress">65%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cronograma -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Cronograma de Entregas</h3>
+        </div>
+        <div class="card-body">
+            <div class="timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Propuesta de Proyecto</h4>
+                        <p>Entregado: 30 Ago 2024</p>
+                        <span class="status-badge success">Aprobado</span>
+                    </div>
+                </div>
+                <div class="timeline-item completed">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Marco Teórico</h4>
+                        <p>Entregado: 15 Nov 2024</p>
+                        <span class="status-badge success">En Revisión</span>
+                    </div>
+                </div>
+                <div class="timeline-item current">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Capítulo 4 - Desarrollo</h4>
+                        <p>Vence: 30 Nov 2024</p>
+                        <span class="status-badge warning">En Progreso</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Análisis de Resultados</h4>
+                        <p>Vence: 15 Dic 2024</p>
+                        <span class="status-badge">Pendiente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

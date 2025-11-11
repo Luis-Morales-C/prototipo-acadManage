@@ -1,0 +1,132 @@
+<div class="content-section">
+    <div class="section-header">
+        <h2>Calendario Académico</h2>
+        <p>Planifica y organiza tus actividades académicas</p>
+    </div>
+
+    <!-- Vista de Calendario -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Noviembre 2024</h3>
+            <div class="calendar-controls">
+                <button class="btn btn-outline">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="btn btn-blue">
+                    <i class="fas fa-plus"></i>
+                    Nueva Actividad
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="calendar-view">
+                <div class="calendar-header">
+                    <div class="calendar-day">Lun</div>
+                    <div class="calendar-day">Mar</div>
+                    <div class="calendar-day">Mié</div>
+                    <div class="calendar-day">Jue</div>
+                    <div class="calendar-day">Vie</div>
+                    <div class="calendar-day">Sáb</div>
+                    <div class="calendar-day">Dom</div>
+                </div>
+                <div class="calendar-grid">
+                    <!-- Días del mes se llenarían dinámicamente -->
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day">
+                        <span class="day-number">1</span>
+                    </div>
+                    <div class="calendar-day">
+                        <span class="day-number">2</span>
+                    </div>
+                    <!-- ... más días -->
+                    <div class="calendar-day event-day">
+                        <span class="day-number">25</span>
+                        <div class="calendar-event delivery">
+                            <span>Entrega Capítulo 4</span>
+                        </div>
+                    </div>
+                    <div class="calendar-day event-day">
+                        <span class="day-number">28</span>
+                        <div class="calendar-event meeting">
+                            <span>Reunión con asesor</span>
+                        </div>
+                    </div>
+                    <div class="calendar-day">
+                        <span class="day-number">29</span>
+                    </div>
+                    <div class="calendar-day">
+                        <span class="day-number">30</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Próximos Eventos -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Próximos Eventos</h3>
+        </div>
+        <div class="card-body">
+            <div class="upcoming-events">
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="event-day">25</span>
+                        <span class="event-month">Nov</span>
+                    </div>
+                    <div class="event-details">
+                        <h4>Entrega Capítulo 4 - Desarrollo</h4>
+                        <p>Fecha límite para entrega del capítulo de desarrollo</p>
+                        <span class="event-time">
+                            <i class="fas fa-clock"></i>
+                            Todo el día
+                        </span>
+                    </div>
+                    <div class="event-actions">
+                        <span class="status-badge warning">Próximo</span>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="event-day">28</span>
+                        <span class="event-month">Nov</span>
+                    </div>
+                    <div class="event-details">
+                        <h4>Reunión de Seguimiento</h4>
+                        <p>Reunión con Dra. María González para revisar avances</p>
+                        <span class="event-time">
+                            <i class="fas fa-clock"></i>
+                            10:00 AM - 11:30 AM
+                        </span>
+                    </div>
+                    <div class="event-actions">
+                        <span class="status-badge info">Agendado</span>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="event-day">15</span>
+                        <span class="event-month">Dic</span>
+                    </div>
+                    <div class="event-details">
+                        <h4>Entrega Análisis de Resultados</h4>
+                        <p>Presentación de resultados de las pruebas del sistema</p>
+                        <span class="event-time">
+                            <i class="fas fa-clock"></i>
+                            Todo el día
+                        </span>
+                    </div>
+                    <div class="event-actions">
+                        <span class="status-badge">Planificado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
